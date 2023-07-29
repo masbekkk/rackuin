@@ -1,0 +1,136 @@
+@font-face {
+    font-family: Thifery;
+    src: url(../fonts/Louis\ George\ Cafe/Louis\ George\ Cafe.ttf);
+}
+
+@font-face {
+    font-family: CodeLight;
+    src: url(../fonts/Code/CODE\ Light.otf);
+}
+
+@font-face {
+    font-family: CodeBold;
+    src: url(../fonts/Code/CODE\ Bold.otf);
+}
+
+* {
+    font-family: Thifery;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.landing-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.button {
+    background-color: #202020;
+    color: white;
+    cursor: pointer;
+}
+
+.button-border {
+    border: 2px solid white;
+}
+
+.button:hover {
+    background-color: #202020;
+    box-shadow: 1px 2px 5px black;
+    color: white;
+}
+
+.form-container {
+    background-color: #CDBACB;
+}
+
+.input-text{
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    background-color: #CDBACB;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+/* Start search style */
+
+.input-search {
+    border: none;
+}
+
+.input-search input {
+    border: 1px solid black;
+    border-right: none;
+    border-top-left-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+}
+
+.input-search button {
+    border: 1px solid black;
+    border-left: none;
+    border-top-right-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+}
+
+/* End search style */
+
+.footer {
+    width: 100%;
+}
+
+/* Start shop bag style */
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 10px;
+}
+  
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+
+#lblCartCount {
+    font-size: 11px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
+
+/* End shop bag style */
+
+.category-item {
+    /* background-color: blue; */
+    width: 150px;
+    height: auto;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: black !important;
+}
+
+.img-card {
+    height: 38vh;
+    object-fit: cover;
+}
