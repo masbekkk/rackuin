@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
@@ -33,5 +34,8 @@ Route::resource('sizes', SizeController::class);
 
 Route::get('data-color', [ColorController::class, 'getColor'])->name('get.color');
 Route::resource('colors', ColorController::class);
+
+Route::get('data-categories', [CategoriesController::class, 'getCategories'])->name('get.category');
+Route::resource('category', CategoriesController::class);
 
 Auth::routes();

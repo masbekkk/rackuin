@@ -124,6 +124,9 @@
                         <li class="{{ Route::is('colors.index') ? 'active' : '' }}"><a class="nav-link"
                                 href="{{ route('colors.index') }}"><i class="fas fa-database"></i> <span>
                                     Warna</span></a></li>
+                        <li class="{{ Route::is('category.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('category.index') }}"><i class="fas fa-database"></i> <span>
+                                    Kategori</span></a></li>
 
 
                     </ul>

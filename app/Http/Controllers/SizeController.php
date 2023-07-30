@@ -31,4 +31,10 @@ class SizeController extends Controller
 
         return response()->json(['message' => 'Data Ukuran Berhasil Ditambahkan!'], 200);
     }
+
+    public function destroy($id)
+    {
+        Size::findOrFail($id)->delete();
+        return response()->json(['message' => 'Data Ukuran Berhasil Dihapus!'], 200);
+    }
 }

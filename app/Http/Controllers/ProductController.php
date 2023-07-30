@@ -39,6 +39,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->sizes = implode(',', $request->sizes);
+        $product->colors = implode(',', $request->colors);
         $product->save();
 
         return response()->json(['message' => 'Data Produk Berhasil Ditambahkan!'], 200);
