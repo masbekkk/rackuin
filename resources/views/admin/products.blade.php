@@ -42,8 +42,17 @@
                               @endforeach
                              
                           </select>
-
                         </div>
+                        <div class="form-group">
+                           <label>Warna Produk</label>
+                           <select class="js-example-basic-multiple" name="colors[]" multiple="multiple">
+                             @foreach ($colors as $color)
+                                 <option value="{{$color->hex_color}}">{{$color->color}}</option>
+                             @endforeach
+                            
+                         </select>
+
+                       </div>
 
                     </div>
                     <div class="modal-footer">
@@ -124,6 +133,7 @@
                             <th>Deskripsi</th>
                             <th>Harga</th>
                             <th>Ukuran</th>
+                            <th>Warna</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -161,6 +171,9 @@
                     data: 'sizes'
                 },
                 {
+                    data: 'colors'
+                },
+                {
                     data: 'id'
                 },
             ];
@@ -169,7 +182,7 @@
                 urlAjax: "{{ route('get.products') }}",
                 columns: dataColumns,
                 defColumn: [{
-                    targets: [5],
+                    targets: [6],
                     data: 'id',
                     render: function(data, type, full, meta) {
                         return `<div class="row w-100">
