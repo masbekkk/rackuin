@@ -43,11 +43,12 @@ jobs:
           echo "::set-output name=pull-request::$pr_number"
 
       - name: Wait for checks to pass
+        id: wait_for_checks
         uses: actions/github-script@v5
         with:
-          github-token: ${{ secrets.TOKEN }}
+          github-token: ${{ secrets.TOKEN }}  # Use your custom secret name here
           script: |
-            const prNumber = github.context.payload['pull_request']['number'];
+            const prNumber = ${{ steps.create_pr.outputs.pull-request }};
             const interval = 10000; // 10 seconds
             let checksCompleted = false;
 
@@ -55,7 +56,7 @@ jobs:
               const { data } = await github.rest.checks.listForRef({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                ref: context.payload.pull_request.head.sha,
+                ref: "${{ github.sha }}",
               });
 
               checksCompleted = data.check_runs.every((check) => check.status === "completed");
