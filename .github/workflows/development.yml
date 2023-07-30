@@ -1,0 +1,73 @@
+name: Auto Pull Request and Merge
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  merge_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Set up PHP environment and other steps (if needed)...
+
+      - name: Set PR title and body
+        id: pr_info
+        run: |
+          # Generate dynamic title and body based on your requirements
+          title="Auto-generated PR - $(date +%Y-%m-%d)"
+          body="This is an automatically generated pull request from GitHub Actions. It was triggered on $(date +%Y-%m-%d) and contains some updates."
+          echo ::set-output name=title::"$title"
+          echo ::set-output name=body::"$body"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        id: create_pr
+        with:
+          token: ${{ secrets.TOKEN }}  # Use your custom secret name here
+          commit-message: 'Auto-generated PR'
+          title: ${{ steps.pr_info.outputs.title }}  # Set the title dynamically
+          body: ${{ steps.pr_info.outputs.body }}    # Set the body dynamically
+          branch: 'development'
+          base: 'main'  # The branch to merge into (main in this example)
+          draft: false  # Set to true if you want to create a draft pull request
+          labels: 'auto-generated'
+          reviewers: 'masbekkk'  # Comma-separated list of reviewers
+          # Additional options can be used as required.
+
+      - name: Wait for checks to pass
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.TOKEN }}  # Use your custom secret name here
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const interval = 10000; // 10 seconds
+            let checksCompleted = false;
+
+            const checkStatus = async () => {
+              const { data } = await github.rest.checks.listForRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: context.payload.pull_request.head.sha,
+              });
+
+              checksCompleted = data.check_runs.every((check) => check.status === "completed");
+
+              if (!checksCompleted) {
+                console.log("Checks are still running...");
+                setTimeout(checkStatus, interval);
+              } else {
+                console.log("All checks have completed successfully.");
+                github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: prNumber,
+                });
+              }
+            };
+
+            checkStatus();
