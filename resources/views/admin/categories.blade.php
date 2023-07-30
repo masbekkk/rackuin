@@ -68,7 +68,7 @@
     </div>
     <div class="card card-danger ">
         <div class="card-header">
-            <a href="#addPesertaDidik" data-toggle="modal" data-target="#addKategoriModal"
+            <a href="#addData" data-toggle="modal" data-target="#addKategoriModal"
                 class="btn btn-icon icon-left btn-primary"><i class="fas fa-pen-alt"></i> Add Data</a>
         </div>
         <div class="card-body">
