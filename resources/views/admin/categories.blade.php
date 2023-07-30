@@ -1,6 +1,6 @@
 @extends('form')
 @section('title')
-    Data Kategori Produk
+    Data Kategori
 @endsection
 
 @section('modal')
