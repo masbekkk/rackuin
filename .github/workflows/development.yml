@@ -25,26 +25,29 @@ jobs:
           echo ::set-output name=body::"$body"
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
         id: create_pr
-        with:
-          token: ${{ secrets.TOKEN }}  # Use your custom secret name here
-          commit-message: 'Auto-generated PR'
-          title: ${{ steps.pr_info.outputs.title }}  # Set the title dynamically
-          body: ${{ steps.pr_info.outputs.body }}    # Set the body dynamically
-          branch: 'development'
-          base: 'main'  # The branch to merge into (main in this example)
-          draft: false  # Set to true if you want to create a draft pull request
-          labels: 'auto-generated'
-          reviewers: 'masbekkk'  # Comma-separated list of reviewers
-          # Additional options can be used as required.
+        run: |
+          token="${{ secrets.TOKEN }}"  # Use your custom secret name here
+          title="${{ steps.pr_info.outputs.title }}"  # Set the title dynamically
+          body="${{ steps.pr_info.outputs.body }}"    # Set the body dynamically
+          reviewers="masbekkk"  # Comma-separated list of reviewers
+          base="main"  # The branch to merge into (main in this example)
+          head=$(git rev-parse HEAD)  # The current commit SHA
+
+          response=$(curl -X POST "https://api.github.com/repos/${{ github.repository }}/pulls" \
+                      -H "Authorization: Bearer $token" \
+                      -H "Accept: application/vnd.github.v3+json" \
+                      -d "{\"title\":\"$title\",\"body\":\"$body\",\"base\":\"$base\",\"head\":\"$head\"}")
+
+          pr_number=$(echo "$response" | jq -r '.number')
+          echo "::set-output name=pull-request::$pr_number"
 
       - name: Wait for checks to pass
         uses: actions/github-script@v5
         with:
-          github-token: ${{ secrets.TOKEN }}  # Use your custom secret name here
+          github-token: ${{ secrets.TOKEN }}
           script: |
-            const prNumber = context.payload.pull_request.number;
+            const prNumber = github.context.payload['pull_request']['number'];
             const interval = 10000; // 10 seconds
             let checksCompleted = false;
 
