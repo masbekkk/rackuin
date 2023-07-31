@@ -1,6 +1,10 @@
 @extends('form')
 @section('title')
-    Data Kategori Produk
+    Data Produk Kategori
+@endsection
+
+@section('style')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endsection
 
 @section('modal')
@@ -8,10 +12,10 @@
     <div class="modal fade" id="addKategoriModal" tabindex="-1" aria-labelledby="addKategoriModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_add_kategori" action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_add_kategori" action="{{ route('product-categories.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addKategoriModalLabel">Tambah Data Kategori</h5>
+                        <h5 class="modal-title" id="addKategoriModalLabel">Tambah Data Produk Kategori</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -19,11 +23,30 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label>Kategori</label>
-                            <input type="text" name="category" class="form-control" required>
+                            <label>Produk</label>
+                            <select class="js-example-basic-multiple" name="product_id">
+                                @foreach ($products as $product)
+                                    <option value="{{$product->id}}">{{$product->name}}</option>
+                                @endforeach
+                               
+                            </select>
+
                         </div>
 
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <select class="js-example-basic-multiple" name="category_id">
+                                @foreach ($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->category}}</option>
+                                @endforeach
+                               
+                            </select>
+
+                        </div>
+                        
+
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
@@ -64,7 +87,7 @@
 @endsection
 @section('content')
     <div class="section-header ">
-        <h1>Data Kategori </h1>
+        <h1>Data Produk Kategori </h1>
     </div>
     <div class="card card-danger ">
         <div class="card-header">
@@ -79,6 +102,7 @@
                             <th class="text-center">
                                 #
                             </th>
+                            <th>Produk</th>
                             <th>Kategori</th>
                             <th>Aksi</th>
                         </tr>
@@ -94,13 +118,22 @@
 @endsection
 
 @section('script')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
-            const dataColumns = [{
+            $('.js-example-basic-multiple').select2({
+                width: 'resolve',
+                theme: "classic"
+            });
+            const dataColumns = [
+                {
                     data: 'id'
                 },
                 {
-                    data: 'category'
+                    data: 'product.name'
+                },
+                {
+                    data: 'category.category'
                 },
                 {
                     data: 'id'
@@ -108,10 +141,10 @@
             ];
             var arrayParams = {
                 idTable: '#table-1',
-                urlAjax: "{{ route('get.category') }}",
+                urlAjax: "{{ route('get.pc') }}",
                 columns: dataColumns,
                 defColumn: [{
-                    targets: [2],
+                    targets: [3],
                     data: 'id',
                     render: function(data, type, full, meta) {
                         return `<div class="row w-100">
@@ -120,7 +153,7 @@
                                  href="#editData" data-toggle="modal" data-target="#editAngketModal" data-id=${data}
                                  title="Edit"><i class="fas fa-edit"></i></a>
                               <a class="btn btn-danger btn-sm text-white w-50 ml-1"
-                                 href="#deleteData" data-delete-url="/category/${data}" 
+                                 href="#deleteData" data-delete-url="/product-categories/${data}" 
                                  onclick="return deleteConfirm(this,'delete')"
                                  title="Delete"><i class="fas fa-trash"></i></a>
                            </div>

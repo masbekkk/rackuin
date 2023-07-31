@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\ProductCategoriesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
 use Illuminate\Support\Facades\Auth;
@@ -37,5 +38,8 @@ Route::resource('colors', ColorController::class);
 
 Route::get('data-categories', [CategoriesController::class, 'getCategories'])->name('get.category');
 Route::resource('category', CategoriesController::class);
+
+Route::get('data-product-categories', [ProductCategoriesController::class, 'getProductCategories'])->name('get.pc');
+Route::resource('product-categories', ProductCategoriesController::class);
 
 Auth::routes();
