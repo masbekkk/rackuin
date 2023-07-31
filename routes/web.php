@@ -18,9 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('/');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 Route::get('contact', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('detail', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
+Route::get('produk', [\App\Http\Controllers\HomeController::class, 'produk'])->name('produk');
+Route::get('coba', [\App\Http\Controllers\HomeController::class, 'coba'])->name('coba');
 
 Route::get('admin/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard.index');
 

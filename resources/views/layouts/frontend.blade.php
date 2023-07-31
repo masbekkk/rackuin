@@ -28,7 +28,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/">tes</a>
+        <a class="navbar-brand" href="/">LOGO</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -46,10 +46,22 @@
               <a class="nav-link active" href="{{route('homepage')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('contact')}}">Contact</a>
+              <a class="nav-link" href="{{route('contact')}}">Tentang</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="admin/dashboard">admin</a>
+              <a class="nav-link" href="{{route('produk')}}">Produk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('coba')}}">Berita</a>
+            </li>
+            <li class="nav-item">
+            <a href="https://www.instagram.com"><img src="instagram.png"></a>
+            </li>
+            <li class="nav-item">
+            <a href="https://www.instagram.com"><img src="facebook.png"></a>
+            </li>
+            <li class="nav-item">
+            <a href="https://wa.me/6281999950241"><img src="whatsapp.png"></a>
             </li>
           </ul>
         </div>

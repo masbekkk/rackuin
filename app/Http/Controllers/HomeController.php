@@ -20,4 +20,14 @@ class HomeController extends Controller
     {
         return view('frontend.detail');
     }
+
+    public function produk()
+    {
+        return view('frontend.produk');
+    }
+
+    public function coba()
+    {
+        return view('frontend.coba');
+    } 
 }
