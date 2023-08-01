@@ -29,7 +29,7 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Ipsa dolor corrupti porro, sit ex nemo itaque, est
                     voluptatum illum dignissimos facilis alias facere rem
-                    consequatur?
+                    consequatur? <img src="instagram.jpg" alt="Description of the image" /> <img src="instagram.jpg" alt="Description of the image" /> <img src="instagram.jpg" alt="Description of the image" />
                   </p>
                   <div class="mobil-info-list border-top pt-4">
                     <ul class="list-unstyled">

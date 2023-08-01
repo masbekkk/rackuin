@@ -6,9 +6,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Rental Mobil - Laravel</title>
+    <meta name="description" content="rak" />
+    <meta name="author" content="jual rak" />
+    <title>Rackuin</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -43,16 +43,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="{{route('homepage')}}">Home</a>
+              <a class="nav-link " href="{{route('homepage')}}">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('contact')}}">Tentang</a>
+              <a class="nav-link " href="{{route('contact')}}">Tentang</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('produk')}}">Produk</a>
+              <a class="nav-link " href="{{route('produk')}}">Produk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('coba')}}">Berita</a>
+              <a class="nav-link " href="{{route('coba')}}">Berita</a>
             </li>
             <li class="nav-item">
             <a href="https://www.instagram.com"><img src="instagram.png"></a>
@@ -70,7 +70,7 @@
     <!-- Header-->
     @yield('content')
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
+    <footer class="footer">
       <div class="container">
         <p class="m-0 text-center text-white">
           Copyright &copy; Your Website 2022
@@ -81,5 +81,24 @@
     <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
     <!-- Core theme JS-->
     <script src="{{ asset('frontend/js/scripts.js') }}"></script>
+
+    <script>
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Hapus kelas 'active' dari tautan yang saat ini aktif (jika ada)
+          const currentActive = document.querySelector('.nav-link.active');
+          if (currentActive) {
+            currentActive.classList.remove('active');
+          }
+
+          // Tambahkan kelas 'active' ke tautan yang baru di-klik
+          this.classList.add('active');
+        });
+      });
+    </script>
+
+
   </body>
 </html>

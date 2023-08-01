@@ -11655,3 +11655,10 @@ fieldset:disabled .btn {
     display: none !important;
   }
 }
+
+.footer {
+  flex-shrink: 0;
+  background-color: black;
+  padding: 20px 0;
+  text-align: center;
+}
