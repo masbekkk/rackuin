@@ -127,9 +127,12 @@
                         <li class="{{ Route::is('category.index') ? 'active' : '' }}"><a class="nav-link"
                                 href="{{ route('category.index') }}"><i class="fas fa-database"></i> <span>
                                     Kategori</span></a></li>
-                                    <li class="{{ Route::is('product-categories.index') ? 'active' : '' }}"><a class="nav-link"
-                                        href="{{ route('product-categories.index') }}"><i class="fas fa-database"></i> <span>
-                                            Produk Kategori</span></a></li>
+                        <li class="{{ Route::is('product-categories.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('product-categories.index') }}"><i class="fas fa-database"></i> <span>
+                                    Produk Kategori</span></a></li>
+                        <li class="{{ Route::is('product-images.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('product-images.index') }}"><i class="fas fa-database"></i> <span>
+                                    Produk Image</span></a></li>
 
 
                     </ul>
@@ -286,6 +289,8 @@
             async: true,
             // dataType: 'json',
             data: params.input,
+            processData: false,
+            contentType: false,
             beforeSend: function(xhr) {
                 Swal.fire({
                     title: 'Sedang menyimpan data...',
