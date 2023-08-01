@@ -100,7 +100,7 @@
                     class="btn d-flex align-items-center justify-content-center btn-primary mt-auto"
                     href="https://wa.me/6281999950241"
                     style="column-gap: 0.4rem"
-                    >Sewa Mobil <i class="ri-whatsapp-line"></i
+                    >beli<i class="ri-whatsapp-line"></i
                   ></a>
                 </div>
               </div>

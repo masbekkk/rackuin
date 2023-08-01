@@ -11679,7 +11679,7 @@ body {
   width: 30px; 
   height: 30px; 
   object-fit: cover; 
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .navbar-img2 {
@@ -11687,4 +11687,15 @@ body {
   height: 30px; 
   object-fit: cover; 
   margin-right: 10px;
+}
+.navbar-imglogo {
+  width: 30px; 
+  height: 30px; 
+  object-fit: cover; 
+}
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
 }

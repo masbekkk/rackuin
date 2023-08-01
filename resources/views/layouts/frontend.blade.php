@@ -30,53 +30,55 @@
   <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-fixed-top">
-      <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/"><img src="assets/rackuin.png" class="navbar-img2"></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link " href="{{route('homepage')}}">Beranda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="{{route('contact')}}">Tentang</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="{{route('produk')}}">Produk</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="{{route('berita')}}">Berita</a>
-            </li>
-            <li class="nav-item">
-            <a href="https://www.instagram.com"><img src="assets/instagram.png" class="navbar-img"></a>
-            </li>
-            <li class="nav-item">
-            <a href="https://id-id.facebook.com"><img src="assets/facebook.png" class="navbar-img"></a>
-            </li>
-            <li class="nav-item">
-            <a href="https://wa.me/6281999950241"><img src="assets/whatsapp.png" class="navbar-img"></a>
-            </li>
-          </ul>
-        </div>
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="/"><img src="assets/rackuin.png" class="navbar-img2"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto navbar-center">
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('homepage')}}">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('contact')}}">Tentang</a>
+          </li>
+          <!-- Dropdown Kategori -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" id="produkDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Produk
+            </a>
+            <div class="dropdown-menu" aria-labelledby="produkDropdown">
+              <a class="dropdown-item" href="{{route('produk')}}">Kategori 1</a>
+              <a class="dropdown-item" href="{{route('produk')}}">Kategori 2</a>
+              <a class="dropdown-item" href="{{route('produk')}}">Kategori 3</a>
+            </div>
+          </li>
+          <!-- Akhir Dropdown Kategori -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('berita')}}">Berita</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.instagram.com"><img src="assets/instagram.png" class="navbar-imglogo"></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://id-id.facebook.com"><img src="assets/facebook.png" class="navbar-imglogo"></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://wa.me/6281999950241"><img src="assets/whatsapp.png" class="navbar-imglogo"></a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
+
     <!-- Header-->
     @yield('content')
     <!-- Footer-->
     <footer class="footer">
       <div class="container">
         <p class="m-0 text-center text-white">
-          Copyright &copy; RACKUIN 2023
+          Copyright &copy; RAKUIN 2023
         </p>
       </div>
     </footer>
