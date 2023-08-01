@@ -11,6 +11,7 @@
         </div>
       </div>
     </header>
+    <!-- section -->
     <section class="py-5">
   <div class="container px-4 px-lg-5 mt-5">
     <h3 class="text-center mb-5">Profil Perusahaan</h3>

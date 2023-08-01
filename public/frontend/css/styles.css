@@ -11662,3 +11662,21 @@ fieldset:disabled .btn {
   padding: 20px 0;
   text-align: center;
 }
+
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+body {
+  padding-top: 70px; 
+}
+
+.navbar-img {
+  width: 30px; 
+  height: 30px; 
+  object-fit: cover; 
+}

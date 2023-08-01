@@ -23,10 +23,13 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('frontend/css/styles.css') }}" rel="stylesheet" />
     <link rel="{{ asset ('frontend/stylesheet" href="css/custom.css;') }}" />
+
+    
+
   </head>
   <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
       <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="/">LOGO</a>
         <button
@@ -55,13 +58,13 @@
               <a class="nav-link " href="{{route('coba')}}">Berita</a>
             </li>
             <li class="nav-item">
-            <a href="https://www.instagram.com"><img src="instagram.png"></a>
+            <a href="https://www.instagram.com"><img src="assets/instagram.png" class="navbar-img"></a>
             </li>
             <li class="nav-item">
-            <a href="https://www.instagram.com"><img src="facebook.png"></a>
+            <a href="https://id-id.facebook.com"><img src="assets/facebook.png" class="navbar-img"></a>
             </li>
             <li class="nav-item">
-            <a href="https://wa.me/6281999950241"><img src="whatsapp.png"></a>
+            <a href="https://wa.me/6281999950241"><img src="assets/whatsapp.png" class="navbar-img"></a>
             </li>
           </ul>
         </div>
