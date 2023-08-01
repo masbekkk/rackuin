@@ -29,9 +29,9 @@
   </head>
   <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-fixed-top">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/">LOGO</a>
+        <a class="navbar-brand" href="/"><img src="assets/rackuin.png" class="navbar-img2"></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -55,7 +55,7 @@
               <a class="nav-link " href="{{route('produk')}}">Produk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="{{route('coba')}}">Berita</a>
+              <a class="nav-link " href="{{route('berita')}}">Berita</a>
             </li>
             <li class="nav-item">
             <a href="https://www.instagram.com"><img src="assets/instagram.png" class="navbar-img"></a>
@@ -76,7 +76,7 @@
     <footer class="footer">
       <div class="container">
         <p class="m-0 text-center text-white">
-          Copyright &copy; Your Website 2022
+          Copyright &copy; RACKUIN 2023
         </p>
       </div>
     </footer>

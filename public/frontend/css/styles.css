@@ -11679,4 +11679,12 @@ body {
   width: 30px; 
   height: 30px; 
   object-fit: cover; 
+  margin-right: 10px;
+}
+
+.navbar-img2 {
+  width: 120px; 
+  height: 30px; 
+  object-fit: cover; 
+  margin-right: 10px;
 }

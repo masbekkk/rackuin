@@ -22,7 +22,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::get('contact', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('detail', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
 Route::get('produk', [\App\Http\Controllers\HomeController::class, 'produk'])->name('produk');
-Route::get('coba', [\App\Http\Controllers\HomeController::class, 'coba'])->name('coba');
+Route::get('berita', [\App\Http\Controllers\HomeController::class, 'berita'])->name('berita');
 
 Route::get('admin/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard.index');
 

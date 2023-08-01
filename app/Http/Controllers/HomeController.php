@@ -26,8 +26,8 @@ class HomeController extends Controller
         return view('frontend.produk');
     }
 
-    public function coba()
+    public function berita()
     {
-        return view('frontend.coba');
+        return view('frontend.berita');
     } 
 }
