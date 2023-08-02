@@ -182,6 +182,9 @@
                     data: 'id'
                 },
                 {
+                    data: 'name'
+                },
+                {
                     data: 'review'
                 },
                 {
@@ -196,7 +199,7 @@
                 urlAjax: "{{ route('get.testimoni') }}",
                 columns: dataColumns,
                 defColumn: [{
-                        targets: [3],
+                        targets: [4],
                         data: 'id',
                         render: function(data, type, full, meta) {
                             return `<div class="row w-100">
@@ -213,7 +216,7 @@
                         },
                     },
                     {
-                        targets: [2],
+                        targets: [3],
                         data: 'Testimonis',
                         render: function(data, type, full, meta) {
                             // console.log(data);
@@ -249,7 +252,7 @@
     </script>
     <script>
         $.ajax({
-            url: "{{ route('get.pi') }}",
+            url: "{{ route('get.testimoni') }}",
             success: function(data) {
                 // games = data.data;
                 $.each(data.data, function(index, value) {

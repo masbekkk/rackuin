@@ -18,3 +18,6 @@ yarn-error.log
 /.idea
 /.vscode
 .DS_Store
+public/assets/bukti_testimoni
+public/assets/product_image
+
