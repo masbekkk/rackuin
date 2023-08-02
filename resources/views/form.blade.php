@@ -68,7 +68,7 @@
                         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i
                                     class="fas fa-bars burger-icon-navbar"></i></a></li>
                         <li><a href="{{ route('/') }}" class="nav-link nav-link-lg ">
-                                <div class="judul-navbar active">BK MTsN Gresik</div>
+                                <div class="judul-navbar active">Rackuin</div>
                             </a></li>
                     </ul>
 
@@ -107,31 +107,31 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="/" class="text-white">MTSN GRESIK</a>
+                        <a href="/" class="text-white">RACKUIN</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="/" class="text-white">MTSN</a>
+                        <a href="/" class="text-white">RACK</a>
                     </div>
                     <ul class="sidebar-menu">
 
                         <li class="menu-header">Data Produk</li>
                         <li class="{{ Route::is('products.index') ? 'active' : '' }}"><a class="nav-link"
-                                href="{{ route('products.index') }}"><i class="fas fa-chart-bar"></i> <span>
+                                href="{{ route('products.index') }}"><i class="fas fa-layer-group"></i><span>
                                     Produk</span></a></li>
                         <li class="{{ Route::is('sizes.index') ? 'active' : '' }}"><a class="nav-link"
-                                href="{{ route('sizes.index') }}"><i class="fas fa-database"></i> <span>
+                                href="{{ route('sizes.index') }}"><i class="far fa-window-maximize"></i><span>
                                     Ukuran</span></a></li>
                         <li class="{{ Route::is('colors.index') ? 'active' : '' }}"><a class="nav-link"
-                                href="{{ route('colors.index') }}"><i class="fas fa-database"></i> <span>
+                                href="{{ route('colors.index') }}"><i class="fas fa-palette"></i> <span>
                                     Warna</span></a></li>
                         <li class="{{ Route::is('category.index') ? 'active' : '' }}"><a class="nav-link"
-                                href="{{ route('category.index') }}"><i class="fas fa-database"></i> <span>
+                                href="{{ route('category.index') }}"><i class="fas fa-th-list"></i> <span>
                                     Kategori</span></a></li>
                         <li class="{{ Route::is('product-categories.index') ? 'active' : '' }}"><a class="nav-link"
-                                href="{{ route('product-categories.index') }}"><i class="fas fa-database"></i> <span>
+                                href="{{ route('product-categories.index') }}"><i class="fas fa-sitemap"></i><span>
                                     Produk Kategori</span></a></li>
                         <li class="{{ Route::is('product-images.index') ? 'active' : '' }}"><a class="nav-link"
-                                href="{{ route('product-images.index') }}"><i class="fas fa-database"></i> <span>
+                                href="{{ route('product-images.index') }}"><i class="far fa-images"></i><span>
                                     Produk Image</span></a></li>
 
 
