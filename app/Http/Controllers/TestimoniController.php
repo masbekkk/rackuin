@@ -44,8 +44,8 @@ class TestimoniController extends Controller
             $testimoni->image = 'assets/bukti_testimoni/' . $bukti_testimoniName;
         }
         if($testimoni->save())
-        return redirect()->route('product-images.index')->with('success', 'Data Testimoni Berhasil Ditambahkan!');
-        else return redirect()->route('product-images.index')->with('errors', $testimoni->getErrors());
+        return redirect()->route('testimoni.index')->with('success', 'Data Testimoni Berhasil Ditambahkan!');
+        else return redirect()->route('testimoni.index')->with('errors', $testimoni->getErrors());
         // return response()->json(['message' => 'Data Produk Image Berhasil Ditambahkan!'], 200);
     }
 

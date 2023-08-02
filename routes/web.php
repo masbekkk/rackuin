@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\DataAppController;
 use App\Http\Controllers\ProductCategoriesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImagesController;
@@ -49,5 +50,7 @@ Route::resource('product-images', ProductImagesController::class);
 
 Route::get('data-testimoni', [TestimoniController::class, 'getTestimonies'])->name('get.testimoni');
 Route::resource('testimoni', TestimoniController::class);
+
+Route::resource('identitas-app', DataAppController::class);
 
 Auth::routes();

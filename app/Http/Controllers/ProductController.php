@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Color;
 use App\Models\Product;
 use App\Models\Size;
+use Hamcrest\Arrays\IsArray;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -35,11 +36,12 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = new Product();
+        // dd($request->description);
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->sizes = implode(',', $request->sizes);
-        $product->colors = implode(',', $request->colors);
+        $product->sizes = (is_array($request->sizes) ? implode(',', $request->sizes) : $request->sizes);
+        $product->colors = (is_array($request->colors) ? implode(',', $request->colors) : $request->colors);
         $product->save();
 
         return response()->json(['message' => 'Data Produk Berhasil Ditambahkan!'], 200);

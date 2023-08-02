@@ -136,8 +136,12 @@
 
                         <li class="menu-header">Data Testimoni</li>
                         <li class="{{ Route::is('testimoni.index') ? 'active' : '' }}"><a class="nav-link"
-                                href="{{ route('testimoni.index') }}"><i class="far fa-images"></i><span>
+                                href="{{ route('testimoni.index') }}"><i class="fas fa-database"></i><span>
                                     Testimoni</span></a></li>
+                        <li class="menu-header">Data Identitas Web</li>
+                        <li class="{{ Route::is('identitas-app.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('identitas-app.index') }}"><i class="fas fa-database"></i><span>
+                                    Data</span></a></li>
 
 
                     </ul>
@@ -287,15 +291,23 @@
 
     // console.log(table);
     // ajax store data
+
+
     function ajaxSaveDatas(params) {
+        // var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': csrfToken
+        //     }
+        // });
         $.ajax({
             url: params.url,
             method: params.method,
             async: true,
             // dataType: 'json',
             data: params.input,
-            processData: false,
-            contentType: false,
+            // processData: false,
+            // contentType: false,
             beforeSend: function(xhr) {
                 Swal.fire({
                     title: 'Sedang menyimpan data...',
@@ -309,7 +321,9 @@
                 })
             },
             success: function(data) {
+                if(params.table == null)
                 table.ajax.reload();
+                
                 Swal.close()
                 Swal.fire({
                     icon: 'success',
