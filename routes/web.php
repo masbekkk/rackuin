@@ -2,8 +2,12 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\DataAppController;
+use App\Http\Controllers\ProductCategoriesController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductImagesController;
 use App\Http\Controllers\SizeController;
+use App\Http\Controllers\TestimoniController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,5 +43,16 @@ Route::resource('colors', ColorController::class);
 
 Route::get('data-categories', [CategoriesController::class, 'getCategories'])->name('get.category');
 Route::resource('category', CategoriesController::class);
+
+Route::get('data-product-categories', [ProductCategoriesController::class, 'getProductCategories'])->name('get.pc');
+Route::resource('product-categories', ProductCategoriesController::class);
+
+Route::get('data-product-images', [ProductImagesController::class, 'getProductImages'])->name('get.pi');
+Route::resource('product-images', ProductImagesController::class);
+
+Route::get('data-testimoni', [TestimoniController::class, 'getTestimonies'])->name('get.testimoni');
+Route::resource('testimoni', TestimoniController::class);
+
+Route::resource('identitas-app', DataAppController::class);
 
 Auth::routes();
