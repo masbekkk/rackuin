@@ -134,6 +134,11 @@
                                 href="{{ route('product-images.index') }}"><i class="far fa-images"></i><span>
                                     Produk Image</span></a></li>
 
+                        <li class="menu-header">Data Testimoni</li>
+                        <li class="{{ Route::is('testimoni.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('testimoni.index') }}"><i class="far fa-images"></i><span>
+                                    Testimoni</span></a></li>
+
 
                     </ul>
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
