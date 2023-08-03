@@ -22,14 +22,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('/');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 Route::get('contact', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('detail', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
+Route::get('produk', [\App\Http\Controllers\HomeController::class, 'produk'])->name('produk');
+Route::get('berita', [\App\Http\Controllers\HomeController::class, 'berita'])->name('berita');
 
 Route::get('admin/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard.index');
 
+Route::get('/dummy', [\App\Http\Controllers\HomeController::class, 'index'])->name('/');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('admin', [\App\Http\Controllers\ProductController::class, 'index']);
 Route::get('data-products', [ProductController::class, 'getProducts'])->name('get.products');
 Route::resource('products', ProductController::class);
 

@@ -11655,3 +11655,47 @@ fieldset:disabled .btn {
     display: none !important;
   }
 }
+
+.footer {
+  flex-shrink: 0;
+  background-color: black;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+body {
+  padding-top: 70px; 
+}
+
+.navbar-img {
+  width: 30px; 
+  height: 30px; 
+  object-fit: cover; 
+  margin-right: 20px;
+}
+
+.navbar-img2 {
+  width: 120px; 
+  height: 30px; 
+  object-fit: cover; 
+  margin-right: 10px;
+}
+.navbar-imglogo {
+  width: 30px; 
+  height: 30px; 
+  object-fit: cover; 
+}
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+}

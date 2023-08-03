@@ -4,7 +4,7 @@
 <header class="bg-dark py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">Detail Mobil</h1>
+          <h1 class="display-4 fw-bolder">Detail</h1>
         </div>
       </div>
     </header>
@@ -29,7 +29,7 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Ipsa dolor corrupti porro, sit ex nemo itaque, est
                     voluptatum illum dignissimos facilis alias facere rem
-                    consequatur?
+                    consequatur? <img src="instagram.jpg" alt="Description of the image" /> <img src="instagram.jpg" alt="Description of the image" /> <img src="instagram.jpg" alt="Description of the image" />
                   </p>
                   <div class="mobil-info-list border-top pt-4">
                     <ul class="list-unstyled">
@@ -100,7 +100,7 @@
                     class="btn d-flex align-items-center justify-content-center btn-primary mt-auto"
                     href="https://wa.me/6281999950241"
                     style="column-gap: 0.4rem"
-                    >Sewa Mobil <i class="ri-whatsapp-line"></i
+                    >beli<i class="ri-whatsapp-line"></i
                   ></a>
                 </div>
               </div>
