@@ -74,7 +74,7 @@
 
 @extends('layouts.app')
 @section('title')
-    Login Guru | BK MTs Negeri Gresik
+    Login Admin Rackuin
 @endsection
 
 @section('content')
