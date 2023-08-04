@@ -56,9 +56,6 @@
           </li>
           <!-- Akhir Dropdown Kategori -->
           <li class="nav-item">
-            <a class="nav-link" href="{{route('berita')}}">Berita</a>
-          </li>
-          <li class="nav-item">
             <a href="https://www.instagram.com"><img src="assets/instagram.png" class="navbar-imglogo"></a>
           </li>
           <li class="nav-item">
@@ -86,24 +83,6 @@
     <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
     <!-- Core theme JS-->
     <script src="{{ asset('frontend/js/scripts.js') }}"></script>
-
-    <script>
-      const navLinks = document.querySelectorAll('.nav-link');
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // Hapus kelas 'active' dari tautan yang saat ini aktif (jika ada)
-          const currentActive = document.querySelector('.nav-link.active');
-          if (currentActive) {
-            currentActive.classList.remove('active');
-          }
-
-          // Tambahkan kelas 'active' ke tautan yang baru di-klik
-          this.classList.add('active');
-        });
-      });
-    </script>
-
 
   </body>
 </html>
