@@ -24,7 +24,6 @@
     <link href="{{ asset('frontend/css/styles.css') }}" rel="stylesheet" />
     <link rel="{{ asset ('frontend/stylesheet" href="css/custom.css;') }}" />
 
-    
 
   </head>
   <body>
@@ -49,9 +48,9 @@
               Produk
             </a>
             <div class="dropdown-menu" aria-labelledby="produkDropdown">
-              <a class="dropdown-item" href="{{route('produk')}}">Kategori 1</a>
-              <a class="dropdown-item" href="{{route('produk')}}">Kategori 2</a>
-              <a class="dropdown-item" href="{{route('produk')}}">Kategori 3</a>
+              <a class="dropdown-item" href="{{route('kategori1')}}">Kategori 1</a>
+              <a class="dropdown-item" href="{{route('kategori2')}}">Kategori 2</a>
+              <a class="dropdown-item" href="{{route('kategori3')}}">Kategori 3</a>
             </div>
           </li>
           <!-- Akhir Dropdown Kategori -->

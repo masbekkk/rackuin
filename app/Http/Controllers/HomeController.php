@@ -30,4 +30,19 @@ class HomeController extends Controller
     {
         return view('frontend.berita');
     } 
+
+    public function kategori1()
+    {
+        return view('frontend.kategori1');
+    } 
+
+    public function kategori2()
+    {
+        return view('frontend.kategori2');
+    } 
+
+    public function kategori3()
+    {
+        return view('frontend.kategori3');
+    } 
 }

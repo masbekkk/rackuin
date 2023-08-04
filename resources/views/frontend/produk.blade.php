@@ -28,6 +28,8 @@
   </div>
 </div>
 
+
+
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
       <div class="col mb-1">
         <div class="card h-100">
@@ -35,7 +37,7 @@
           <a href="{{ route('detail') }}">
             <img
               class="card-img-top "
-              src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+              src="assets/motor.jpg.avif"
               alt="..."
             />
           </a>
@@ -69,7 +71,7 @@
           <a href="{{ route('detail') }}">
             <img
               class="card-img-top"
-              src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+              src="assets/tes.jpg"
               alt="..."
             />
           </a>
