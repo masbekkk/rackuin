@@ -12,7 +12,8 @@
     <div class="modal fade" id="addProdukModal" tabindex="-1" aria-labelledby="addProdukModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_add_produk" action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_add_produk" action="{{ route('products.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="addProdukModalLabel">Tambah Data Produk</h5>
@@ -37,22 +38,22 @@
                         <div class="form-group">
                             <label>Ukuran Produk</label>
                             <select class="js-example-basic-multiple" name="sizes[]" multiple="multiple">
-                              @foreach ($sizes as $size)
-                                  <option value="{{$size->size}}">{{$size->size}}</option>
-                              @endforeach
-                             
-                          </select>
+                                @foreach ($sizes as $size)
+                                    <option value="{{ $size->size }}">{{ $size->size }}</option>
+                                @endforeach
+
+                            </select>
                         </div>
                         <div class="form-group">
-                           <label>Warna Produk</label>
-                           <select class="js-example-basic-multiple" name="colors[]" multiple="multiple">
-                             @foreach ($colors as $color)
-                                 <option value="{{$color->hex_color}}">{{$color->color}}</option>
-                             @endforeach
-                            
-                         </select>
+                            <label>Warna Produk</label>
+                            <select class="js-example-basic-multiple" name="colors[]" multiple="multiple">
+                                @foreach ($colors as $color)
+                                    <option value="{{ $color->hex_color }}">{{ $color->color }}</option>
+                                @endforeach
 
-                       </div>
+                            </select>
+
+                        </div>
 
                     </div>
                     <div class="modal-footer">
@@ -93,11 +94,22 @@
                         </div>
                         <div class="form-group">
                             <label>Ukuran Produk</label>
-                            <select class="js-example-basic-multiple" name="sizes[]" multiple="multiple">
+                            <select class="js-example-basic-multiple" name="sizes[]" multiple="multiple" id="size_edit">
                                 @foreach ($sizes as $size)
-                                    <option value="{{$size->size}}">{{$size->size}}</option>
+                                    <option value="{{ $size->size }}">{{ $size->size }}</option>
                                 @endforeach
-                               
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Warna Produk</label>
+                            <select class="js-example-basic-multiple" name="colors[]" multiple="multiple" id="color_edit">
+                                @foreach ($colors as $color)
+                                    <option value="{{ $color->hex_color }}">{{ $color->color }}</option>
+                                @endforeach
+
                             </select>
 
                         </div>
@@ -188,7 +200,8 @@
                         return `<div class="row w-100">
                            <div class="col-12 d-flex justify-content-between">
                               <a class="btn btn-warning btn-sm text-white w-50 mr-1"
-                                 href="#editData" data-toggle="modal" data-target="#editAngketModal" data-id=${data}
+                                 href="#editData" data-toggle="modal" data-target="#editProdukModal" data-id=${data}
+                                 data-sizes="${full.sizes}" data-colors="${full.colors}" data-price="${full.price}" data-description="${full.description}" data-name="${full.name}"
                                  title="Edit"><i class="fas fa-edit"></i></a>
                               <a class="btn btn-danger btn-sm text-white w-50 ml-1"
                                  href="#deleteData" data-delete-url="/products/${data}" 
@@ -205,21 +218,38 @@
                 // console.log( jsonTables.data[350]["id"] +' row(s) were loaded' );
             });
 
-            $('#editAngketModal').on('show.bs.modal', function(event) {
+            $('#editProdukModal').on('show.bs.modal', function(event) {
                 const button = $(event.relatedTarget);
 
-                var results = [];
+                // var results = []; 
                 var idData = button.data('id');
-                var searchField = "id_angkets";
-                var searchVal = idData;
-                for (var i = 0; i < jsonTables.data.length; i++) {
-                    if (jsonTables.data[i][searchField] == searchVal) {
-                        results.push(jsonTables.data[i]);
-                    }
-                }
-                // console.log(results[0].nama);
-                $('#id_edit').val(results[0].id_angkets)
-                $('#angket_edit').val(results[0].angket)
+                console.log(button.data('sizes'))
+                var selectedSize = [button.data('sizes')];
+                var selectedSizes = selectedSize[0].split(',');
+                console.log(selectedSizes)
+                $('#size_edit').val(selectedSizes).trigger('change');
+
+                var selectedColor = [button.data('colors')];
+                var selectedColors = selectedColor[0].split(',');
+                console.log(selectedColors)
+                $('#color_edit').val(selectedColors).trigger('change');
+
+                $('#name_edit').val(button.data('name'))
+                $('#description_edit').val(button.data('description'))
+                $('#price_edit').val(button.data('price'))
+
+                $('#form_edit_Produk').attr('action', 'products/' + idData)
+                // $('#size_edit').select2('data', {id: [button.data('sizes')], text: button.data('sizes')})
+                // var searchField = "id_angkets";
+                // var searchVal = idData;
+                // for (var i = 0; i < jsonTables.data.length; i++) {
+                //     if (jsonTables.data[i][searchField] == searchVal) {
+                //         results.push(jsonTables.data[i]);
+                //     }
+                // }
+                // // console.log(results[0].nama);
+                // $('#id_edit').val(results[0].id_angkets)
+                // $('#angket_edit').val(results[0].angket)
 
             })
         })
@@ -239,14 +269,14 @@
             //  table.ajax.reload()
         })
 
-        $('#form_edit_Angket').submit(function(e) {
+        $('#form_edit_Produk').submit(function(e) {
             e.preventDefault();
             var arr_params = {
-                url: $('#form_edit_Angket').attr('action'),
+                url: $('#form_edit_Produk').attr('action'),
                 method: 'PUT',
-                input: $('#form_edit_Angket').serialize(),
-                forms: $('#form_edit_Angket')[0].reset(),
-                modal: $('#editAngketModal').modal('hide'),
+                input: $('#form_edit_Produk').serialize(),
+                forms: $('#form_edit_Produk')[0].reset(),
+                modal: $('#editProdukModal').modal('hide'),
             }
             ajaxSaveDatas(arr_params)
             //  table.ajax.reload()

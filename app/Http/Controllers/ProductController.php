@@ -48,6 +48,21 @@ class ProductController extends Controller
 
     }
 
+    public function update($id, Request $request)
+    {
+        $product = Product::findOrFail($id);
+        // dd($request->description);
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->sizes = (is_array($request->sizes) ? implode(',', $request->sizes) : $request->sizes);
+        $product->colors = (is_array($request->colors) ? implode(',', $request->colors) : $request->colors);
+        $product->save();
+
+        return response()->json(['message' => 'Data Produk Berhasil Diperbarui!'], 200);
+
+    }
+
     public function destroy($id)
     {
         Product::findOrFail($id)->delete();
