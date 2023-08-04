@@ -34,6 +34,16 @@ class ColorController extends Controller
         return response()->json(['message' => 'Data Warna Berhasil Ditambahkan!'], 200);
     }
 
+    public function update($id, Request $request)
+    {
+        $color = Color::findOrFail($id);
+        $color->hex_color = $request->hex_color;
+        $color->color = $request->color;
+        $color->save();
+
+        return response()->json(['message' => 'Data Warna Berhasil Diperbarui!'], 200);
+    }
+
     public function destroy($id)
     {
         Color::findOrFail($id)->delete();

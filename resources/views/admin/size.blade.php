@@ -137,10 +137,8 @@
             $('#editUkuranModal').on('show.bs.modal', function(event) {
                 const button = $(event.relatedTarget);
 
-                var results = [];
                 var idData = button.data('id');
                 
-                // $('#id_edit').val(idData)
                 $('#ukuran_edit').val(button.data('ukuran'))
                 $('#form_edit_Ukuran').attr('action', 'sizes/' + idData)
 
