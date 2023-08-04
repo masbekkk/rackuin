@@ -8,14 +8,15 @@
 @endsection
 
 @section('modal')
-    <!-- Modal Add Data Kategori -->
-    <div class="modal fade" id="addKategoriModal" tabindex="-1" aria-labelledby="addKategoriModalLabel" aria-hidden="true">
+    <!-- Modal Add Data Kategori Produk -->
+    <div class="modal fade" id="addPCModal" tabindex="-1" aria-labelledby="addPCModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_add_kategori" action="{{ route('product-categories.store') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_add_PC" action="{{ route('product-categories.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addKategoriModalLabel">Tambah Data Produk Kategori</h5>
+                        <h5 class="modal-title" id="addPCModalLabel">Tambah Data Produk Kategori</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -26,9 +27,9 @@
                             <label>Produk</label>
                             <select class="js-example-basic-multiple" name="product_id">
                                 @foreach ($products as $product)
-                                    <option value="{{$product->id}}">{{$product->name}}</option>
+                                    <option value="{{ $product->id }}">{{ $product->name }}</option>
                                 @endforeach
-                               
+
                             </select>
 
                         </div>
@@ -37,13 +38,13 @@
                             <label>Kategori</label>
                             <select class="js-example-basic-multiple" name="category_id">
                                 @foreach ($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->category}}</option>
+                                    <option value="{{ $category->id }}">{{ $category->category }}</option>
                                 @endforeach
-                               
+
                             </select>
 
                         </div>
-                        
+
 
                     </div>
 
@@ -56,23 +57,39 @@
         </div>
     </div>
 
-    <!-- Modal Edit Data Angket -->
-    <div class="modal fade" id="editUkuranModal" tabindex="-1" aria-labelledby="editUkuranModalLabel" aria-hidden="true">
+    <!-- Modal Edit Data PC -->
+    <div class="modal fade" id="editPCModal" tabindex="-1" aria-labelledby="editPCModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_edit_ukuran" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_edit_PC" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editUkuranModalLabel">Edit Data Ukuran</h5>
+                        <h5 class="modal-title" id="editPCModalLabel">Edit Data PC</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
+                        <div class="form-group">
+                            <label>Produk</label>
+                            <select class="js-example-basic-multiple" name="product_id" id="id_product_edit">
+                                @foreach ($products as $product)
+                                    <option value="{{ $product->id }}">{{ $product->name }}</option>
+                                @endforeach
+
+                            </select>
+
+                        </div>
 
                         <div class="form-group">
-                            <label>Ukuran</label>
-                            <input type="text" id="ukuran_edit" name="ukuran" class="form-control" required>
+                            <label>Kategori</label>
+                            <select class="js-example-basic-multiple" name="category_id" id="id_category_edit">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->category }}</option>
+                                @endforeach
+
+                            </select>
+
                         </div>
 
                     </div>
@@ -91,8 +108,8 @@
     </div>
     <div class="card card-danger ">
         <div class="card-header">
-            <a href="#addData" data-toggle="modal" data-target="#addKategoriModal"
-                class="btn btn-icon icon-left btn-primary"><i class="fas fa-pen-alt"></i> Add Data</a>
+            <a href="#addData" data-toggle="modal" data-target="#addPCModal" class="btn btn-icon icon-left btn-primary"><i
+                    class="fas fa-pen-alt"></i> Add Data</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -118,15 +135,14 @@
 @endsection
 
 @section('script')
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.js-example-basic-multiple').select2({
                 width: 'resolve',
                 theme: "classic"
             });
-            const dataColumns = [
-                {
+            const dataColumns = [{
                     data: 'id'
                 },
                 {
@@ -150,7 +166,8 @@
                         return `<div class="row w-100">
                            <div class="col-12 d-flex justify-content-between">
                               <a class="btn btn-warning btn-sm text-white w-50 mr-1"
-                                 href="#editData" data-toggle="modal" data-target="#editAngketModal" data-id=${data}
+                                 href="#editData" data-toggle="modal" data-target="#editPCModal" data-id=${data}
+                                 data-id_product="${full.product_id}" data-id_category="${full.category_id}"
                                  title="Edit"><i class="fas fa-edit"></i></a>
                               <a class="btn btn-danger btn-sm text-white w-50 ml-1"
                                  href="#deleteData" data-delete-url="/product-categories/${data}" 
@@ -167,47 +184,39 @@
                 // console.log( jsonTables.data[350]["id"] +' row(s) were loaded' );
             });
 
-            $('#editAngketModal').on('show.bs.modal', function(event) {
+            $('#editPCModal').on('show.bs.modal', function(event) {
                 const button = $(event.relatedTarget);
 
-                var results = [];
                 var idData = button.data('id');
-                var searchField = "id_angkets";
-                var searchVal = idData;
-                for (var i = 0; i < jsonTables.data.length; i++) {
-                    if (jsonTables.data[i][searchField] == searchVal) {
-                        results.push(jsonTables.data[i]);
-                    }
-                }
-                // console.log(results[0].nama);
-                $('#id_edit').val(results[0].id_angkets)
-                $('#angket_edit').val(results[0].angket)
-
+                $('#id_product_edit').val(button.data('id_product')).trigger('change')
+                $('#id_category_edit').val(button.data('id_category')).trigger('change')
+                
+                $('#form_edit_PC').attr('action', 'product-categories/' + idData)
             })
         })
     </script>
     <script>
-        $('#form_add_kategori').submit(function(e) {
+        $('#form_add_PC').submit(function(e) {
             e.preventDefault();
             var arr_params = {
-                url: $('#form_add_kategori').attr('action'),
+                url: $('#form_add_PC').attr('action'),
                 method: 'POST',
-                input: $('#form_add_kategori').serialize(),
-                forms: $('#form_add_kategori')[0].reset(),
-                modal: $('#addKategoriModal').modal('hide'),
+                input: $('#form_add_PC').serialize(),
+                forms: $('#form_add_PC')[0].reset(),
+                modal: $('#addPCModal').modal('hide'),
             }
             ajaxSaveDatas(arr_params)
             //  table.ajax.reload()
         })
 
-        $('#form_edit_Angket').submit(function(e) {
+        $('#form_edit_PC').submit(function(e) {
             e.preventDefault();
             var arr_params = {
-                url: $('#form_edit_Angket').attr('action'),
+                url: $('#form_edit_PC').attr('action'),
                 method: 'PUT',
-                input: $('#form_edit_Angket').serialize(),
-                forms: $('#form_edit_Angket')[0].reset(),
-                modal: $('#editAngketModal').modal('hide'),
+                input: $('#form_edit_PC').serialize(),
+                forms: $('#form_edit_PC')[0].reset(),
+                modal: $('#editPCModal').modal('hide'),
             }
             ajaxSaveDatas(arr_params)
             //  table.ajax.reload()
