@@ -239,17 +239,6 @@
                 $('#price_edit').val(button.data('price'))
 
                 $('#form_edit_Produk').attr('action', 'products/' + idData)
-                // $('#size_edit').select2('data', {id: [button.data('sizes')], text: button.data('sizes')})
-                // var searchField = "id_angkets";
-                // var searchVal = idData;
-                // for (var i = 0; i < jsonTables.data.length; i++) {
-                //     if (jsonTables.data[i][searchField] == searchVal) {
-                //         results.push(jsonTables.data[i]);
-                //     }
-                // }
-                // // console.log(results[0].nama);
-                // $('#id_edit').val(results[0].id_angkets)
-                // $('#angket_edit').val(results[0].angket)
 
             })
         })

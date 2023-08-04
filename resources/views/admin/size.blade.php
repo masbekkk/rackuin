@@ -37,7 +37,7 @@
     <div class="modal fade" id="editUkuranModal" tabindex="-1" aria-labelledby="editUkuranModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_edit_ukuran" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_edit_Ukuran" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="editUkuranModalLabel">Edit Data Ukuran</h5>
@@ -49,7 +49,7 @@
 
                         <div class="form-group">
                             <label>Ukuran</label>
-                            <input type="text" id="ukuran_edit" name="ukuran" class="form-control" required>
+                            <input type="text" id="ukuran_edit" name="size" class="form-control" required>
                         </div>
 
                     </div>
@@ -117,10 +117,10 @@
                         return `<div class="row w-100">
                            <div class="col-12 d-flex justify-content-between">
                               <a class="btn btn-warning btn-sm text-white w-50 mr-1"
-                                 href="#editData" data-toggle="modal" data-target="#editAngketModal" data-id=${data}
+                                 href="#editData" data-toggle="modal" data-target="#editUkuranModal" data-id=${data} data-ukuran="${full.size}"
                                  title="Edit"><i class="fas fa-edit"></i></a>
                               <a class="btn btn-danger btn-sm text-white w-50 ml-1"
-                                 href="#deleteData" data-delete-url="/delete/master/angkets/${data}" 
+                                 href="#deleteData" data-delete-url="/sizes/${data}" 
                                  onclick="return deleteConfirm(this,'delete')"
                                  title="Delete"><i class="fas fa-trash"></i></a>
                            </div>
@@ -134,21 +134,16 @@
                 // console.log( jsonTables.data[350]["id"] +' row(s) were loaded' );
             });
 
-            $('#editAngketModal').on('show.bs.modal', function(event) {
+            $('#editUkuranModal').on('show.bs.modal', function(event) {
                 const button = $(event.relatedTarget);
 
                 var results = [];
                 var idData = button.data('id');
-                var searchField = "id_angkets";
-                var searchVal = idData;
-                for (var i = 0; i < jsonTables.data.length; i++) {
-                    if (jsonTables.data[i][searchField] == searchVal) {
-                        results.push(jsonTables.data[i]);
-                    }
-                }
-                // console.log(results[0].nama);
-                $('#id_edit').val(results[0].id_angkets)
-                $('#angket_edit').val(results[0].angket)
+                
+                // $('#id_edit').val(idData)
+                $('#ukuran_edit').val(button.data('ukuran'))
+                $('#form_edit_Ukuran').attr('action', 'sizes/' + idData)
+
 
             })
         })
@@ -167,14 +162,14 @@
             //  table.ajax.reload()
         })
 
-        $('#form_edit_Angket').submit(function(e) {
+        $('#form_edit_Ukuran').submit(function(e) {
             e.preventDefault();
             var arr_params = {
-                url: $('#form_edit_Angket').attr('action'),
+                url: $('#form_edit_Ukuran').attr('action'),
                 method: 'PUT',
-                input: $('#form_edit_Angket').serialize(),
-                forms: $('#form_edit_Angket')[0].reset(),
-                modal: $('#editAngketModal').modal('hide'),
+                input: $('#form_edit_Ukuran').serialize(),
+                forms: $('#form_edit_Ukuran')[0].reset(),
+                modal: $('#editUkuranModal').modal('hide'),
             }
             ajaxSaveDatas(arr_params)
             //  table.ajax.reload()
