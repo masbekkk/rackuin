@@ -34,13 +34,13 @@
     </div>
 
     <!-- Modal Edit Data Angket -->
-    <div class="modal fade" id="editUkuranModal" tabindex="-1" aria-labelledby="editUkuranModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editKategoriModal" tabindex="-1" aria-labelledby="editKategoriModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_edit_ukuran" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_edit_Kategori" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editUkuranModalLabel">Edit Data Ukuran</h5>
+                        <h5 class="modal-title" id="editKategoriModalLabel">Edit Data Kategori</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -48,8 +48,8 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label>Ukuran</label>
-                            <input type="text" id="ukuran_edit" name="ukuran" class="form-control" required>
+                            <label>Kategori</label>
+                            <input type="text" id="kategori_edit" name="category" class="form-control" required>
                         </div>
 
                     </div>
@@ -117,7 +117,8 @@
                         return `<div class="row w-100">
                            <div class="col-12 d-flex justify-content-between">
                               <a class="btn btn-warning btn-sm text-white w-50 mr-1"
-                                 href="#editData" data-toggle="modal" data-target="#editAngketModal" data-id=${data}
+                                 href="#editData" data-toggle="modal" data-target="#editKategoriModal" data-id=${data}
+                                 data-category="${full.category}"
                                  title="Edit"><i class="fas fa-edit"></i></a>
                               <a class="btn btn-danger btn-sm text-white w-50 ml-1"
                                  href="#deleteData" data-delete-url="/category/${data}" 
@@ -134,21 +135,13 @@
                 // console.log( jsonTables.data[350]["id"] +' row(s) were loaded' );
             });
 
-            $('#editAngketModal').on('show.bs.modal', function(event) {
+            $('#editKategoriModal').on('show.bs.modal', function(event) {
                 const button = $(event.relatedTarget);
 
-                var results = [];
                 var idData = button.data('id');
-                var searchField = "id_angkets";
-                var searchVal = idData;
-                for (var i = 0; i < jsonTables.data.length; i++) {
-                    if (jsonTables.data[i][searchField] == searchVal) {
-                        results.push(jsonTables.data[i]);
-                    }
-                }
-                // console.log(results[0].nama);
-                $('#id_edit').val(results[0].id_angkets)
-                $('#angket_edit').val(results[0].angket)
+                $('#kategori_edit').val(button.data('category'))
+                $('#form_edit_Kategori').attr('action', 'category/' + idData)
+          
 
             })
         })
@@ -167,14 +160,14 @@
             //  table.ajax.reload()
         })
 
-        $('#form_edit_Angket').submit(function(e) {
+        $('#form_edit_Kategori').submit(function(e) {
             e.preventDefault();
             var arr_params = {
-                url: $('#form_edit_Angket').attr('action'),
+                url: $('#form_edit_Kategori').attr('action'),
                 method: 'PUT',
-                input: $('#form_edit_Angket').serialize(),
-                forms: $('#form_edit_Angket')[0].reset(),
-                modal: $('#editAngketModal').modal('hide'),
+                input: $('#form_edit_Kategori').serialize(),
+                forms: $('#form_edit_Kategori')[0].reset(),
+                modal: $('#editKategoriModal').modal('hide'),
             }
             ajaxSaveDatas(arr_params)
             //  table.ajax.reload()
