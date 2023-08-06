@@ -52,6 +52,28 @@ class ProductImagesController extends Controller
         // return response()->json(['message' => 'Data Produk Image Berhasil Ditambahkan!'], 200);
     }
 
+    public function update($id, Request $request)
+    {
+        // dd("ok");
+        $pi = ProductImages::findOrFail($id);
+        $pi->product_id = $request->product_id;
+      
+        $product_image = $request->file('product_image');
+        if (!empty($product_image)) {
+            $product_imageName = time() . '.' . $product_image->extension();
+            $product_image->move(public_path('assets/product_image'), $product_imageName);
+            $oldProductImage = $pi->images;
+            if (File::exists(public_path($oldProductImage))) {
+                File::delete(public_path($oldProductImage));
+            }
+            $pi->images = 'assets/product_image/' . $product_imageName;
+        }
+        if($pi->save())
+        return redirect()->route('product-images.index')->with('success', 'Data Produk Image Berhasil Ditambahkan!');
+        else return redirect()->route('product-images.index')->with('errors', $pi->getErrors());
+        // return response()->json(['message' => 'Data Produk Image Berhasil Ditambahkan!'], 200);
+    }
+
     public function destroy($id)
     {
         $data = ProductImages::findOrFail($id);
