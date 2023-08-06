@@ -69,7 +69,7 @@
     <div class="modal fade" id="editProdukModal" tabindex="-1" aria-labelledby="editProdukModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_edit_Produk" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_edit_Produk" action="{{ route('homepage') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" id="id_edit">
                     <div class="modal-header">

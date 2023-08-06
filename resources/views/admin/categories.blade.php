@@ -37,7 +37,7 @@
     <div class="modal fade" id="editKategoriModal" tabindex="-1" aria-labelledby="editKategoriModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_edit_Kategori" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_edit_Kategori" action="{{ route('homepage') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="editKategoriModalLabel">Edit Data Kategori</h5>

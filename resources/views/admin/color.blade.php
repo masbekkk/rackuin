@@ -42,7 +42,7 @@
     <div class="modal fade" id="editWarnaModal" tabindex="-1" aria-labelledby="editWarnaModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_edit_Warna" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_edit_Warna" action="{{ route('homepage') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="editWarnaModalLabel">Edit Data Warna</h5>

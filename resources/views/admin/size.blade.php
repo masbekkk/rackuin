@@ -37,7 +37,7 @@
     <div class="modal fade" id="editUkuranModal" tabindex="-1" aria-labelledby="editUkuranModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_edit_Ukuran" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_edit_Ukuran" action="{{ route('homepage') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="editUkuranModalLabel">Edit Data Ukuran</h5>

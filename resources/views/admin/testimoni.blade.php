@@ -66,7 +66,7 @@
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_edit_Testimoni" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_edit_Testimoni" action="{{ route('homepage') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{ method_field('PUT') }}
                     <div class="modal-header">

@@ -3,7 +3,7 @@
 
 <head>
     <title>@yield('title')</title>
-    <link rel="icon" href="{{ asset('/img/logo-mtsn-gresik.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/rackuin.png')}}" />
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -67,8 +67,8 @@
                     <ul class="navbar-nav mr-3">
                         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i
                                     class="fas fa-bars burger-icon-navbar"></i></a></li>
-                        <li><a href="{{ route('/') }}" class="nav-link nav-link-lg ">
-                                <div class="judul-navbar active">Rackuin</div>
+                        <li><a href="{{ route('homepage') }}" class="nav-link nav-link-lg ">
+                                <div class="judul-navbar active">Rakuin</div>
                             </a></li>
                     </ul>
 
@@ -107,10 +107,10 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="/" class="text-white">RACKUIN</a>
+                        <a href="/" class="text-white">RAKUIN</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="/" class="text-white">RACK</a>
+                        <a href="/" class="text-white">RAK</a>
                     </div>
                     <ul class="sidebar-menu">
 
