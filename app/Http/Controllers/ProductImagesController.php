@@ -33,13 +33,7 @@ class ProductImagesController extends Controller
     {
         $pi = new ProductImages();
         $pi->product_id = $request->product_id;
-        // $oldTooltipImage = $game->tooltip_images;
-        // if (File::exists(public_path($oldTooltipImage))) {
-        //     File::delete(public_path($oldTooltipImage));
-        // }
-        // dd($request->hasFile('product_image') );
-        // if($request->hasFile('product_image') && $request->file('product_image')->isValid())
-        // dd($request->file('product_image'));
+
         $product_image = $request->file('product_image');
         if (!empty($product_image)) {
             $product_imageName = time() . '.' . $product_image->extension();

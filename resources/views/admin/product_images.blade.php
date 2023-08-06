@@ -39,14 +39,14 @@
                             <div class="input-group mb-3">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="upload-image" accept="image/*"
-                                        name="product_image" onchange="previewImageEdit(event)" required>
+                                        name="product_image" onchange="previewImage(event)" required>
                                     <label class="custom-file-label" for="upload-image">Choose file</label>
                                 </div>
                             </div>
                             <div class="preview-image-container">
-                                <img src="#" class="img-fluid rounded" id="preview-image-edit" alt="Preview Image"
+                                <img src="#" class="img-fluid rounded" id="preview-image" alt="Preview Image"
                                     style="display:none;">
-                                <p class="text-muted" id="no-preview-text-edit" style="display:block;">No preview available</p>
+                                <p class="text-muted" id="no-preview-text" style="display:block;">No preview available</p>
                             </div>
                         </div>
 
@@ -99,15 +99,15 @@
                             <div class="input-group mb-3">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="upload-image" accept="image/*"
-                                        name="product_image" onchange="previewImage(event)" required>
+                                        name="product_image" onchange="previewImageEdit(event)" required>
                                     <label class="custom-file-label" for="upload-image">Choose file</label>
                                 </div>
                             </div>
 
                             <div class="preview-image-container">
-                                <img src="#" class="img-fluid rounded" id="preview-image" alt="Preview Image"
+                                <img src="#" class="img-fluid rounded" id="preview-image-edit" alt="Preview Image"
                                     style="display:none;">
-                                <p class="text-muted" id="no-preview-text" style="display:block;">No preview available
+                                <p class="text-muted" id="no-preview-text-edit" style="display:block;">No preview available
                                 </p>
                             </div>
                         </div>
