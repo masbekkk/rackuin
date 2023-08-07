@@ -19,11 +19,11 @@
     <div class="category-bar">
   <div class="container">
     <ul class="category-tabs">
-      <li class="category-tab active">All</li>
-      <li class="category-tab">Electronics</li>
-      <li class="category-tab">Fashion</li>
-      <li class="category-tab">Home & Living</li>
-      <li class="category-tab">Toys & Games</li>
+      <li class="category-tab active"><a href="{{ route('detail') }}">All</a></li>
+      <li class="category-tab"><a href="{{ route('detail') }}">Electronics</a></li>
+      <li class="category-tab"><a href="{{ route('detail') }}">Fashion</a></li>
+      <li class="category-tab"><a href="{{ route('detail') }}">Home & Living</a></li>
+      <li class="category-tab"><a href="{{ route('detail') }}">Toys & Games</a></li>
     </ul>
   </div>
 </div>
