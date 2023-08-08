@@ -24,7 +24,6 @@
     <link href="{{ asset('frontend/css/styles.css') }}" rel="stylesheet" />
     <link rel="{{ asset ('frontend/stylesheet" href="css/custom.css;') }}" />
 
-    
 
   </head>
   <body>
@@ -49,15 +48,12 @@
               Produk
             </a>
             <div class="dropdown-menu" aria-labelledby="produkDropdown">
-              <a class="dropdown-item" href="{{route('produk')}}">Kategori 1</a>
-              <a class="dropdown-item" href="{{route('produk')}}">Kategori 2</a>
-              <a class="dropdown-item" href="{{route('produk')}}">Kategori 3</a>
+              <a class="dropdown-item" href="{{route('kategori1')}}">Kategori 1</a>
+              <a class="dropdown-item" href="{{route('kategori2')}}">Kategori 2</a>
+              <a class="dropdown-item" href="{{route('kategori3')}}">Kategori 3</a>
             </div>
           </li>
           <!-- Akhir Dropdown Kategori -->
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('berita')}}">Berita</a>
-          </li>
           <li class="nav-item">
             <a href="https://www.instagram.com"><img src="assets/instagram.png" class="navbar-imglogo"></a>
           </li>
@@ -86,24 +82,6 @@
     <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
     <!-- Core theme JS-->
     <script src="{{ asset('frontend/js/scripts.js') }}"></script>
-
-    <script>
-      const navLinks = document.querySelectorAll('.nav-link');
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // Hapus kelas 'active' dari tautan yang saat ini aktif (jika ada)
-          const currentActive = document.querySelector('.nav-link.active');
-          if (currentActive) {
-            currentActive.classList.remove('active');
-          }
-
-          // Tambahkan kelas 'active' ke tautan yang baru di-klik
-          this.classList.add('active');
-        });
-      });
-    </script>
-
 
   </body>
 </html>

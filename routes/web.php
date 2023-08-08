@@ -27,6 +27,10 @@ Route::get('contact', [\App\Http\Controllers\HomeController::class, 'contact'])-
 Route::get('detail', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
 Route::get('produk', [\App\Http\Controllers\HomeController::class, 'produk'])->name('produk');
 Route::get('berita', [\App\Http\Controllers\HomeController::class, 'berita'])->name('berita');
+Route::get('kategori1', [\App\Http\Controllers\HomeController::class, 'kategori1'])->name('kategori1');
+Route::get('kategori2', [\App\Http\Controllers\HomeController::class, 'kategori2'])->name('kategori2');
+Route::get('kategori3', [\App\Http\Controllers\HomeController::class, 'kategori3'])->name('kategori3');
+
 
 Route::get('admin/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard.index');
 
