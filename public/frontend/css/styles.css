@@ -11772,17 +11772,7 @@ body {
   background-color: #f0f0f0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-header {
-  background-color: #4285F4;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
+
 section {
   padding: 40px 0;
   text-align: center;
@@ -11805,3 +11795,8 @@ section {
   max-width: 100%;
   height: auto;
 }
+
+
+
+
+

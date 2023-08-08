@@ -3,16 +3,17 @@
 @section('content')
 <header class="bg-black py-5">
       <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">RAK</h1>
-          <p class="lead fw-normal text-white-50 mb-0">
-            mampu menahan baju mu
-          </p>
+        <div class="text-start text-white">
+          <h1 class="display-4 fw-bolder">Pabrik Rak Mini Market dan Rak Gudang</h1>
+          <p class="lead fw-normal text-white-50 mb-0">Lorem ipsum, atau ringkasnya lipsum, adalah teks standar yang ditempatkan untuk mendemostrasikan elemen grafis atau presentasi visual seperti font, tipografi, dan tata letak</p>
         </div>
       </div>
     </header>
+
+  
+
     <!-- section -->
-    <section>
+   <section>
     <div class="section-content">
       <h2 class="section-title">About Us</h2>
       <div class="card">
@@ -21,6 +22,8 @@
       </div>
     </div>
   </section>
+
+  
 
   <section style="background-color: #f8f9fa;">
     <div class="section-content">
@@ -46,6 +49,8 @@
       </div>
     </div>
   </section>
+
+  JavaScript
 
 
 @endsection
