@@ -18,23 +18,28 @@ class DataAppController extends Controller
         return view('admin.data-app', ['data' => $data]);
     }
 
-    public function getSize()
-    {
-        $size = DataApp::all();
-        return response()->json(['data' => $size], 200);
-    }
-
     public function store( Request $request)
     {
+        $image_about_us = $request->file('image_about_us');
+        if (!empty($image_about_us)) {
+            $image_about_usName = time() . '.' . $image_about_us->extension();
+            $image_about_us->move(public_path('assets/image_about_us'), $image_about_usName);
+            // $testimoni->image = 'assets/image_about_us/' . $image_about_usName;
+        }
+
         $dataApp = [
             'about_us' => $request->about_us,
             'visi' => $request->visi,
             'misi' => $request->misi,
+            'image' => 'assets/image_about_us/' . $image_about_usName,
         ];
 
-        DataApp::updateOrCreate(['id' => 1], $dataApp);
+        $updated = DataApp::updateOrCreate(['id' => 1], $dataApp);
+        if($updated)
+        return redirect()->route('identitas-app.index')->with('success', 'Data Identitas Berhasil Ditambahkan!');
+        else return redirect()->route('identitas-app.index')->with('errors', $updated->getErrors());
 
-        return response()->json(['message' => 'Data Identitas Web Berhasil Ditambahkan!'], 200);
+        // return response()->json(['message' => 'Data Identitas Web Berhasil Ditambahkan!'], 200);
     }
 
     public function destroy($id)

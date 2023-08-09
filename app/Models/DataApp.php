@@ -9,5 +9,5 @@ class DataApp extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'about_us', 'visi', 'misi'];
+    protected $fillable = ['id', 'about_us', 'visi', 'misi', 'image'];
 }
