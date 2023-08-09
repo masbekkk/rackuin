@@ -1,6 +1,48 @@
 @extends('layouts.frontend')
 
 @section('content')
+
+<style>
+   section {
+  padding: 40px 0;
+  text-align: center;
+}
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.section-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 66.67%; /* 3:2 aspect ratio */
+  }
+
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  </style>
+
 <header class="bg-black py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-start text-white">
@@ -11,19 +53,131 @@
     </header>
 
   
+  
+
 
     <!-- section -->
-   <section>
-    <div class="section-content">
-      <h2 class="section-title">About Us</h2>
-      <div class="card">
-        <img src="https://dummyimage.com/300x200/dee2e6/6c757d.jpg" alt="About Us Image">
-        <p>We are a dedicated team...</p>
+    <section style="background-color: #f8f9fa;">
+  <div class="section-content">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="{{route('kategori1')}}">
+          <div class="image-container">
+              <img src="assets/motor.jpg.avif" class="d-block w-100" alt="About Us Image">
+            </div>
+            <div class="carousel-caption">
+              <p>We are a dedicated team...</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{route('kategori1')}}">
+            <img src="https://dummyimage.com/300x200/007bff/dee2e6.jpg" class="d-block w-100" alt="Carousel Image 2">
+            <div class="carousel-caption">
+              <p>Another beautiful image...</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{route('kategori1')}}">
+            <img src="https://dummyimage.com/300x200/28a745/dee2e6.jpg" class="d-block w-100" alt="Carousel Image 3">
+            <div class="carousel-caption">
+              <p>Explore our services...</p>
+            </div>
+          </a>
+        </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   
+
+  
+
+
+<section >
+    <div class="section-content">
+      <h2 class="section-title">Mengapa Harus Beli di Rakindo</h2>
+      <div class="row justify-content-center">
+  <div class="col-10 col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <!-- Product title -->
+      <div class="card-body text-center">
+        <h5 class="card-title">Judul Produk 1</h5>
+        <p class="card-text">Deskripsi produk 1</p>
+      </div>
+      <!-- Remove Product actions-->
+    </div>
+  </div>
+  <div class="col-10 col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <!-- Product title -->
+      <div class="card-body text-center">
+        <h5 class="card-title">Judul Produk 2</h5>
+        <p class="card-text">Deskripsi produk 2</p>
+      </div>
+      <!-- Remove Product actions-->
+    </div>
+  </div>
+  <div class="col-10 col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <!-- Product title -->
+      <div class="card-body text-center">
+        <h5 class="card-title">Judul Produk 3</h5>
+        <p class="card-text">Deskripsi produk 3</p>
+      </div>
+      <!-- Remove Product actions-->
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-10 col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <!-- Product title -->
+      <div class="card-body text-center">
+        <h5 class="card-title">Judul Produk 4</h5>
+        <p class="card-text">Deskripsi produk 4</p>
+      </div>
+      <!-- Remove Product actions-->
+    </div>
+  </div>
+  <div class="col-10 col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <!-- Product title -->
+      <div class="card-body text-center">
+        <h5 class="card-title">Judul Produk 5</h5>
+        <p class="card-text">Deskripsi produk 5</p>
+      </div>
+      <!-- Remove Product actions-->
+    </div>
+  </div>
+  <div class="col-10 col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <!-- Product title -->
+      <div class="card-body text-center">
+        <h5 class="card-title">Judul Produk 6</h5>
+        <p class="card-text">Deskripsi produk 6</p>
+      </div>
+      <!-- Remove Product actions-->
+    </div>
+  </div>
+</div>
+  </section>
+
+
+ 
 
   <section style="background-color: #f8f9fa;">
     <div class="section-content">
@@ -41,16 +195,114 @@
   </section>
 
   <section>
-    <div class="section-content">
-      <h2 class="section-title">Contact Us</h2>
-      <div class="card">
-        <p>Email: contact@example.com</p>
-        <p>Phone: (123) 456-7890</p>
+  <div class="section-content">
+    <h2 class="section-title">Testimoni Pelanggan</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-3 mb-4">
+        <div class="card testimonial-card">
+          <img src="foto-testimoni-1.jpg" class="card-img-top" alt="Foto Testimoni 1">
+          <div class="card-body">
+            <p class="card-text">Ulasan dari pelanggan 1.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card testimonial-card">
+          <img src="foto-testimoni-2.jpg" class="card-img-top" alt="Foto Testimoni 2">
+          <div class="card-body">
+            <p class="card-text">Ulasan dari pelanggan 2.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card testimonial-card">
+          <img src="foto-testimoni-3.png" class="card-img-top" alt="Foto Testimoni 3">
+          <div class="card-body">
+            <p class="card-text">Ulasan dari pelanggan 3.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card testimonial-card">
+          <img src="foto-testimoni-4.jpg" class="card-img-top" alt="Foto Testimoni 4">
+          <div class="card-body">
+            <p class="card-text">Ulasan dari pelanggan 4.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  JavaScript
+  <section style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="section-content">
+      <h2 class="section-title">FAQ</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Pertanyaan 1
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body fs-6">
+              Jawaban untuk pertanyaan 1.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Pertanyaan 2
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body fs-6">
+              Jawaban untuk pertanyaan 2.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Pertanyaan 3
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+            <div class="accordion-body fs-6">
+              Jawaban untuk pertanyaan 3.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Pertanyaan 4
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+            <div class="accordion-body fs-6">
+              Jawaban untuk pertanyaan 4.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="section-content">
+    <h2 class="section-title">Hubungi Kami</h2>
+    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success">
+      <i class="fab fa-whatsapp me-2"></i>Hubungi melalui WhatsApp
+    </a>
+  </div>
+</section>
+
+  
 
 
 @endsection

@@ -1,6 +1,33 @@
 @extends('layouts.frontend')
 
 @section('content')
+
+<style>
+   section {
+  padding: 40px 0;
+  text-align: center;
+}
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.section-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+  </style>
+
 <header class="bg-black py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
