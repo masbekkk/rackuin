@@ -42,7 +42,7 @@
         <div class="section-content">
             <div class="card">
                 <div style="display: flex;">
-                    <img src="{{ asset($data->image) ?? '' }}" alt="About Us Image" style="flex: 1;">
+                    <img src="{{ (isset($data->image) ? asset($data->image) : '') }}" alt="About Us Image" style="flex: 1;">
                     <div style="flex: 2; padding-left: 20px;">
                         <p>{!! $data->about_us ?? '' !!}</p>
                     </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="card">
                 <h3>Misi</h3>
-                {!! $data->misi !!}
+                {!! $data->misi ?? '' !!}
                 {{-- <ul>
         <li>Menghadirkan produk berkualitas tinggi kepada pelanggan kami.</li>
         <li>Memberikan pelayanan terbaik dan pengalaman yang unggul.</li>

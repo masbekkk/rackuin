@@ -59,7 +59,7 @@
                 <div class="form-group">
                     <label for="upload-image" class="font-weight-bold">Gambar Sebelumnya</label>
                     <div class="previous-image-container">
-                        <img src={{ asset($data->image) ?? ""  }} class="img-fluid rounded" id="previous_image" alt="previous Image"
+                        <img src={{ (isset($data->image) ? asset($data->image) : '')  }} class="img-fluid rounded" id="previous_image" alt="previous Image"
                             style="display:block;">
                         <p class="text-muted" id="no-previous-text" style="display:none;">No previous image
                             available</p>
