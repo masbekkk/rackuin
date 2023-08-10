@@ -1,177 +1,222 @@
 @extends('layouts.frontend')
 
 @section('content')
-<header class="bg-black py-5">
-      <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">PRODUK KAMI</h1>
+    <header class="bg-black py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">PRODUK KAMI</h1>
+            </div>
         </div>
-      </div>
-</header>
+    </header>
 
 
 
     <!-- Section-->
-<section class="py-5">
-  <div class="container px-4 px-lg-5 mt-5">
-    <h3 class="text-center mb-5">Daftar rak-rak</h3>
-    
-    <div class="category-bar">
-  <div class="container">
-    <ul class="category-tabs">
-      <li class="category-tab active">All</li>
-      <li class="category-tab">Electronics</li>
-      <li class="category-tab">Fashion</li>
-      <li class="category-tab">Home & Living</li>
-      <li class="category-tab">Toys & Games</li>
-    </ul>
-  </div>
-</div>
-
-
-
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-      <div class="col mb-1">
-        <div class="card h-100">
-          <!-- Product image-->
-          <a href="{{ route('detail') }}">
-            <img
-              class="card-img-top "
-              src="assets/motor.jpg.avif"
-              alt="..."
-            />
-          </a>
-          <!-- Product title -->
-          <div class="card-body">
-            <h5 class="card-title">Judul Produk 1</h5>
-          </div>
-          <!-- Remove Product actions-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <h3 class="text-center mb-5">Daftar rak-rak</h3>
+                  <ul class="navbar-nav d-flex">
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                @foreach ($products as $product)
+                    <div class="col mb-3">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <a href="{{ route('detail', ['id' => $product->id ]) }}">
+                                <img class="card-img-top " src="{{ asset($product->productImage[0]->images ?? '') }}"
+                                    alt="..." />
+                            </a>
+                            <!-- Product title -->
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $product->name }}</h5>
+                            </div>
+                            <!-- Remove Product actions-->
+                        </div>
+                    </div>
+                @endforeach
+                {{-- <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk 4</h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk 5</h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk 6</h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk </h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk 4</h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk 5</h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk 6</h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk </h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk 4</h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk 5</h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk 6</h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{{ route('detail') }}">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                        </a>
+                        <!-- Product title -->
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Produk </h5>
+                        </div>
+                        <!-- Remove Product actions-->
+                    </div>
+                </div>
+            </div> --}}
         </div>
-      </div>
-      <div class="col mb-1">
-        <div class="card h-100">
-          <!-- Product image-->
-          <a href="{{ route('detail') }}">
-            <img
-              class="card-img-top"
-              src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-              alt="..."
-            />
-          </a>
-          <!-- Product title -->
-          <div class="card-body">
-            <h5 class="card-title">Judul Produk 2</h5>
-          </div>
-          <!-- Remove Product actions-->
+        <div class="container px-4 px-lg-5 mt-5">
         </div>
-      </div>
-      <div class="col mb-1">
-        <div class="card h-100">
-          <!-- Product image-->
-          <a href="{{ route('detail') }}">
-            <img
-              class="card-img-top"
-              src="assets/tes.jpg"
-              alt="..."
-            />
-          </a>
-          <!-- Product title -->
-          <div class="card-body">
-            <h5 class="card-title">Judul Produk 3</h5>
-          </div>
-          <!-- Remove Product actions-->
-        </div>
-      </div>
-      <div class="col mb-1">
-        <div class="card h-100">
-          <!-- Product image-->
-          <a href="{{ route('detail') }}">
-            <img
-              class="card-img-top"
-              src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-              alt="..."
-            />
-          </a>
-          <!-- Product title -->
-          <div class="card-body">
-            <h5 class="card-title">Judul Produk 4</h5>
-          </div>
-          <!-- Remove Product actions-->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container px-4 px-lg-5 mt-5">
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-      <div class="col mb-1">
-        <div class="card h-100">
-          <!-- Product image-->
-          <a href="{{ route('detail') }}">
-            <img
-              class="card-img-top"
-              src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-              alt="..."
-            />
-          </a>
-          <!-- Product title -->
-          <div class="card-body">
-            <h5 class="card-title">Judul Produk 4</h5>
-          </div>
-          <!-- Remove Product actions-->
-        </div>
-      </div>
-      <div class="col mb-1">
-        <div class="card h-100">
-          <!-- Product image-->
-          <a href="{{ route('detail') }}">
-            <img
-              class="card-img-top"
-              src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-              alt="..."
-            />
-          </a>
-          <!-- Product title -->
-          <div class="card-body">
-            <h5 class="card-title">Judul Produk 5</h5>
-          </div>
-          <!-- Remove Product actions-->
-        </div>
-      </div>
-      <div class="col mb-1">
-        <div class="card h-100">
-          <!-- Product image-->
-          <a href="{{ route('detail') }}">
-            <img
-              class="card-img-top"
-              src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-              alt="..."
-            />
-          </a>
-          <!-- Product title -->
-          <div class="card-body">
-            <h5 class="card-title">Judul Produk 6</h5>
-          </div>
-          <!-- Remove Product actions-->
-        </div>
-      </div>
-      <div class="col mb-1">
-        <div class="card h-100">
-          <!-- Product image-->
-          <a href="{{ route('detail') }}">
-            <img
-              class="card-img-top"
-              src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-              alt="..."
-            />
-          </a>
-          <!-- Product title -->
-          <div class="card-body">
-            <h5 class="card-title">Judul Produk </h5>
-          </div>
-          <!-- Remove Product actions-->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 @endsection

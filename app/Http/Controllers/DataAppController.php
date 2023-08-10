@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\DataApp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class DataAppController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('showAboutUs');
+    }
+
+    public function showAboutUs()
+    {
+        $data = DataApp::first();
+        return view('frontend.tentang', ['data' => $data]);
     }
 
     public function index()
@@ -20,18 +27,19 @@ class DataAppController extends Controller
 
     public function store( Request $request)
     {
+        $image = "";
         $image_about_us = $request->file('image_about_us');
         if (!empty($image_about_us)) {
             $image_about_usName = time() . '.' . $image_about_us->extension();
             $image_about_us->move(public_path('assets/image_about_us'), $image_about_usName);
-            // $testimoni->image = 'assets/image_about_us/' . $image_about_usName;
+            $image = 'assets/image_about_us/' . $image_about_usName;
         }
 
         $dataApp = [
             'about_us' => $request->about_us,
             'visi' => $request->visi,
             'misi' => $request->misi,
-            'image' => 'assets/image_about_us/' . $image_about_usName,
+            'image' => $image,
         ];
 
         $updated = DataApp::updateOrCreate(['id' => 1], $dataApp);

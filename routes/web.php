@@ -23,8 +23,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
-Route::get('contact', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
-Route::get('detail', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
+Route::get('about-us', [\App\Http\Controllers\DataAppController::class, 'showAboutUs'])->name('about-us');
+Route::get('detail/{id}', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
 Route::get('produk', [\App\Http\Controllers\HomeController::class, 'produk'])->name('produk');
 Route::get('berita', [\App\Http\Controllers\HomeController::class, 'berita'])->name('berita');
 Route::get('kategori1', [\App\Http\Controllers\HomeController::class, 'kategori1'])->name('kategori1');

@@ -3,7 +3,7 @@
 
 <head>
     <title>@yield('title')</title>
-    <link rel="icon" href="{{ asset('assets/rackuin.png')}}" />
+    <link rel="icon" href="{{ asset('assets/rackuin.png') }}" />
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -321,9 +321,9 @@
                 })
             },
             success: function(data) {
-                if(params.table == null)
-                table.ajax.reload();
-                
+                if (params.table == null)
+                    table.ajax.reload();
+
                 Swal.close()
                 Swal.fire({
                     icon: 'success',
