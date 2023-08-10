@@ -20,7 +20,7 @@
                     <ul class="category-tabs">
                         <li class="category-tab active"><a href="{{ route('produk') }}">All</a></li>
                         @foreach ($categories as $category)
-                            <li class="category-tab"><a href="{{ route('/') }}">{{ $category->category }}</a></li>
+                            <li class="category-tab"><a href="{{ route('produk.kategori', ['id' => $category->id ]) }}">{{ $category->category }}</a></li>
                         @endforeach
                     </ul>
                 </div>
