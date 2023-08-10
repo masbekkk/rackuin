@@ -30,6 +30,7 @@ Route::get('berita', [\App\Http\Controllers\HomeController::class, 'berita'])->n
 Route::get('kategori1', [\App\Http\Controllers\HomeController::class, 'kategori1'])->name('kategori1');
 Route::get('kategori2', [\App\Http\Controllers\HomeController::class, 'kategori2'])->name('kategori2');
 Route::get('kategori3', [\App\Http\Controllers\HomeController::class, 'kategori3'])->name('kategori3');
+Route::get('produk-kategori/{id}', [\App\Http\Controllers\HomeController::class, 'produkCategories'])->name('produk.kategori');
 
 
 Route::get('admin/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard.index');

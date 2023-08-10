@@ -4,7 +4,7 @@
     <header class="bg-black py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">PRODUK KAMI</h1>
+                <h1 class="display-4 fw-bolder">{{ $category_name }}</h1>
             </div>
         </div>
     </header>
@@ -20,24 +20,25 @@
                     <ul class="category-tabs">
                         <li class="category-tab active"><a href="{{ route('produk') }}">All</a></li>
                         @foreach ($categories as $category)
-                            <li class="category-tab"><a href="{{ route('/') }}">{{ $category->category }}</a></li>
+                            <li class="category-tab"><a href="{{ route('produk.kategori', ['id' => $category->id]) }}">{{ $category->category }}</a></li>
                         @endforeach
                     </ul>
                 </div>
             </div>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                @foreach ($products as $product)
-                
+                @foreach ($pc as $pc)
+
                     <div class="col mb-3">
                         <div class="card h-100">
+                            
                             <!-- Product image-->
-                            <a href="{{ route('detail', ['id' => $product->id]) }}">
-                                <img class="card-img-top " src="{{ asset($product->productImage[0]->images ?? '') }}"
+                            <a href="{{ route('detail', ['id' => $pc->product->id]) }}">
+                                <img class="card-img-top " src="{{ asset($pc->product->productImage[0]->images ?? '') }}"
                                     alt="..." />
                             </a>
                             <!-- Product title -->
                             <div class="card-body">
-                                <h5 class="card-title">{{ $product->name }}</h5>
+                                <h5 class="card-title">{{ $pc->product->name }}</h5>
                             </div>
                             <!-- Remove Product actions-->
                         </div>

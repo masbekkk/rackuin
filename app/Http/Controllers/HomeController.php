@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Product;
+use App\Models\ProductCategories;
 use App\Models\ProductImages;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
@@ -48,6 +49,23 @@ class HomeController extends Controller
         return view('frontend.produk', [
             'products' => $products,
             'categories' => $categories,
+        ]);
+    }
+
+
+    public function produkCategories($idCategory)
+    {
+        $pc = ProductCategories::where('category_id', $idCategory)->with('product', 'category')->get();
+        $namaCategory = Categories::findOrFail($idCategory);
+        $categories = Categories::all();
+        // with('product')
+        // ->groupBy('product_id')
+        // ->get(['product_id']);
+        // dd($pc);
+        return view('frontend.produk-kategori', [
+            'pc' => $pc,
+            'categories' => $categories,
+            'category_name' => $namaCategory->category,
         ]);
     }
 
