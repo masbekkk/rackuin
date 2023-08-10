@@ -41,6 +41,16 @@ class ProductCategoriesController extends Controller
         return response()->json(['message' => 'Data Produk Kategori Berhasil Ditambahkan!'], 200);
     }
 
+    public function update($id, Request $request)
+    {
+        $pc = ProductCategories::findOrFail($id);
+        $pc->product_id = $request->product_id;
+        $pc->category_id = $request->category_id;
+        $pc->save();
+
+        return response()->json(['message' => 'Data Produk Kategori Berhasil Diperbarui!'], 200);
+    }
+
     public function destroy($id)
     {
         ProductCategories::findOrFail($id)->delete();

@@ -32,6 +32,15 @@ class CategoriesController extends Controller
         return response()->json(['message' => 'Data Ukuran Berhasil Ditambahkan!'], 200);
     }
 
+    public function update($id, Request $request)
+    {
+        $category = Categories::findOrFail($id);
+        $category->category = $request->category;
+        $category->save();
+
+        return response()->json(['message' => 'Data Ukuran Berhasil Diperbarui!'], 200);
+    }
+
     public function destroy($id)
     {
         Categories::findOrFail($id)->delete();

@@ -2,47 +2,72 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
+use App\Models\Product;
+use App\Models\ProductImages;
+use App\Models\Testimoni;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.homepage');
+        $images = ProductImages::all();
+        $testimonies = Testimoni::all();
+        return view('frontend.homepage', [
+            'images' => $images,
+            'testimonies' => $testimonies,
+        ]);
     }
 
-    public function contact()
+    public function tentang()
     {
-        return view('frontend.contact');
+        return view('frontend.tentang');
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view('frontend.detail');
+        $product = Product::findOrFail($id);
+        $colors = explode(',', $product->colors);
+        // dd($colors);
+        return view('frontend.detail', [
+            'product' => $product,
+            'colors' => $colors,
+
+        ]);
     }
 
     public function produk()
     {
-        return view('frontend.produk');
+        $products = Product::with('productImage')->get();
+        $categories = Categories::all();
+        // with('product')
+        // ->groupBy('product_id')
+        // ->get(['product_id']);
+        // dd($products);
+        return view('frontend.produk', [
+            'products' => $products,
+            'categories' => $categories,
+        ]);
     }
 
     public function berita()
     {
         return view('frontend.berita');
-    } 
+    }
 
     public function kategori1()
     {
         return view('frontend.kategori1');
-    } 
+    }
 
     public function kategori2()
     {
         return view('frontend.kategori2');
-    } 
+    }
 
     public function kategori3()
     {
         return view('frontend.kategori3');
-    } 
+    }
 }

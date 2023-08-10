@@ -39,7 +39,7 @@
                             <div class="input-group mb-3">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="upload-image" accept="image/*"
-                                        name="product_image" onchange="previewImage(event)">
+                                        name="product_image" onchange="previewImage(event)" required>
                                     <label class="custom-file-label" for="upload-image">Choose file</label>
                                 </div>
                             </div>
@@ -62,23 +62,54 @@
         </div>
     </div>
 
-    <!-- Modal Edit Data Angket -->
-    <div class="modal fade" id="editUkuranModal" tabindex="-1" aria-labelledby="editUkuranModalLabel" aria-hidden="true">
+    <!-- Modal Edit Data Image -->
+    <div class="modal fade" id="editImageModal" tabindex="-1" aria-labelledby="editImageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="form_edit_ukuran" action="{{ route('/') }}" method="POST" enctype="multipart/form-data">
+                <form id="form_edit_Image" action="{{ route('homepage') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    {{ method_field('PUT')}}
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editUkuranModalLabel">Edit Data Ukuran</h5>
+                        <h5 class="modal-title" id="editImageModalLabel">Edit Data Image</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
+                        <div class="form-group">
+                            <label>Produk</label>
+                            <select class="js-example-basic-multiple" name="product_id" id="id_product_edit">
+                                @foreach ($products as $product)
+                                    <option value="{{ $product->id }}">{{ $product->name }}</option>
+                                @endforeach
+
+                            </select>
+
+                        </div>
 
                         <div class="form-group">
-                            <label>Ukuran</label>
-                            <input type="text" id="ukuran_edit" name="ukuran" class="form-control" required>
+                            <label for="upload-image" class="font-weight-bold">Gambar Sebelumnya</label>
+                            <div class="previous-image-container">
+                                <img src="#" class="img-fluid rounded" id="previous_image" alt="previous Image"
+                                    style="display:none;">
+                                <p class="text-muted" id="no-previous-text" style="display:block;">No previous image
+                                    available</p>
+                            </div>
+                            <label for="upload-image" class="font-weight-bold">Upload Image</label>
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="upload-image" accept="image/*"
+                                        name="product_image" onchange="previewImageEdit(event)" required>
+                                    <label class="custom-file-label" for="upload-image">Choose file</label>
+                                </div>
+                            </div>
+
+                            <div class="preview-image-container">
+                                <img src="#" class="img-fluid rounded" id="preview-image-edit" alt="Preview Image"
+                                    style="display:none;">
+                                <p class="text-muted" id="no-preview-text-edit" style="display:block;">No preview available
+                                </p>
+                            </div>
                         </div>
 
                     </div>
@@ -174,6 +205,13 @@
             preview.style.display = "block";
             noPreviewText.style.display = "none";
         }
+        function previewImageEdit(event) {
+            var preview = document.getElementById("preview-image-edit");
+            var noPreviewText = document.getElementById("no-preview-text-edit");
+            preview.src = URL.createObjectURL(event.target.files[0]);
+            preview.style.display = "block";
+            noPreviewText.style.display = "none";
+        }
         $(document).ready(function() {
             $('.js-example-basic-multiple').select2({
                 width: 'resolve',
@@ -203,7 +241,8 @@
                             return `<div class="row w-100">
                            <div class="col-12 d-flex justify-content-between">
                               <a class="btn btn-warning btn-sm text-white w-50 mr-1"
-                                 href="#editData" data-toggle="modal" data-target="#editAngketModal" data-id=${data}
+                                 href="#editData" data-toggle="modal" data-target="#editImageModal" data-id=${data}
+                                 data-product_id="${full.product_id}" data-image="${full.images}"
                                  title="Edit"><i class="fas fa-edit"></i></a>
                               <a class="btn btn-danger btn-sm text-white w-50 ml-1"
                                  href="#deleteData" data-delete-url="/product-images/${data}" 
@@ -229,21 +268,22 @@
                 // console.log( jsonTables.data[350]["id"] +' row(s) were loaded' );
             });
 
-            $('#editAngketModal').on('show.bs.modal', function(event) {
+            $('#editImageModal').on('show.bs.modal', function(event) {
                 const button = $(event.relatedTarget);
-
-                var results = [];
+                console.log(button.data('image'))
                 var idData = button.data('id');
-                var searchField = "id_angkets";
-                var searchVal = idData;
-                for (var i = 0; i < jsonTables.data.length; i++) {
-                    if (jsonTables.data[i][searchField] == searchVal) {
-                        results.push(jsonTables.data[i]);
-                    }
-                }
-                // console.log(results[0].nama);
-                $('#id_edit').val(results[0].id_angkets)
-                $('#angket_edit').val(results[0].angket)
+                // console.log(window.location.origin + '/' + button.data("image"))
+                var previous = document.getElementById("previous_image");
+                var noPreviousText = document.getElementById("no-previous-text");
+                previous.src = window.location.origin + '/' + button.data("image");
+                previous.style.display = "block";
+                noPreviousText.style.display = "none";
+                // $('#previous_image').attr('src', window.location.origin + '/' + button.data("image"))
+
+                $('#id_product_edit').val(button.data('product_id')).trigger('change')
+                $('#form_edit_Image').attr('action', 'product-images/' + idData)
+
+
 
             })
         })
@@ -284,17 +324,17 @@
         //     //  table.ajax.reload()
         // })
 
-        $('#form_edit_Angket').submit(function(e) {
-            e.preventDefault();
-            var arr_params = {
-                url: $('#form_edit_Angket').attr('action'),
-                method: 'PUT',
-                input: $('#form_edit_Angket').serialize(),
-                forms: $('#form_edit_Angket')[0].reset(),
-                modal: $('#editAngketModal').modal('hide'),
-            }
-            ajaxSaveDatas(arr_params)
-            //  table.ajax.reload()
-        })
+        // $('#form_edit_Image').submit(function(e) {
+        //     e.preventDefault();
+        //     var arr_params = {
+        //         url: $('#form_edit_Image').attr('action'),
+        //         method: 'PUT',
+        //         input: $('#form_edit_Image').serialize(),
+        //         forms: $('#form_edit_Image')[0].reset(),
+        //         modal: $('#editImageModal').modal('hide'),
+        //     }
+        //     ajaxSaveDatas(arr_params)
+        //     //  table.ajax.reload()
+        // });
     </script>
 @endsection

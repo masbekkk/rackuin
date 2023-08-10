@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('about_us');
             $table->text('visi');
             $table->text('misi');
+            $table->string('image');
             $table->timestamps();
         });
     }

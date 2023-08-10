@@ -30,17 +30,33 @@ class TestimoniController extends Controller
         $testimoni = new Testimoni();
         $testimoni->name = $request->name;
         $testimoni->review = $request->review;
-        // $oldTooltipImage = $game->tooltip_images;
-        // if (File::exists(public_path($oldTooltipImage))) {
-        //     File::delete(public_path($oldTooltipImage));
-        // }
-        // dd($request->hasFile('product_image') );
-        // if($request->hasFile('product_image') && $request->file('product_image')->isValid())
-        // dd($request->file('product_image'));
+   
         $bukti_testimoni = $request->file('bukti_testimoni');
         if (!empty($bukti_testimoni)) {
             $bukti_testimoniName = time() . '.' . $bukti_testimoni->extension();
             $bukti_testimoni->move(public_path('assets/bukti_testimoni'), $bukti_testimoniName);
+            $testimoni->image = 'assets/bukti_testimoni/' . $bukti_testimoniName;
+        }
+        if($testimoni->save())
+        return redirect()->route('testimoni.index')->with('success', 'Data Testimoni Berhasil Ditambahkan!');
+        else return redirect()->route('testimoni.index')->with('errors', $testimoni->getErrors());
+        // return response()->json(['message' => 'Data Produk Image Berhasil Ditambahkan!'], 200);
+    }
+
+    public function update($id, Request $request)
+    {
+        $testimoni = Testimoni::findOrFail($id);
+        $testimoni->name = $request->name;
+        $testimoni->review = $request->review;
+   
+        $bukti_testimoni = $request->file('bukti_testimoni');
+        if (!empty($bukti_testimoni)) {
+            $bukti_testimoniName = time() . '.' . $bukti_testimoni->extension();
+            $bukti_testimoni->move(public_path('assets/bukti_testimoni'), $bukti_testimoniName);
+            $oldTestimoniImage = $testimoni->image;
+            if (File::exists(public_path($oldTestimoniImage))) {
+                File::delete(public_path($oldTestimoniImage));
+            }
             $testimoni->image = 'assets/bukti_testimoni/' . $bukti_testimoniName;
         }
         if($testimoni->save())
