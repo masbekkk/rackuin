@@ -14,27 +14,24 @@
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
-            <h3 class="text-center mb-5">Daftar rak-rak</h3>
-                  <ul class="navbar-nav d-flex">
-                    <li class="nav-item me-3">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item me-3">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item me-3">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item me-3">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
+            <h3 class="text-center mb-1">Daftar rak-rak</h3>
+            <div class="category-bar">
+                <div class="container">
+                    <ul class="category-tabs">
+                        <li class="category-tab active"><a href="{{ route('produk') }}">All</a></li>
+                        @foreach ($categories as $category)
+                            <li class="category-tab"><a href="{{ route('/') }}">{{ $category->category }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 @foreach ($products as $product)
+                
                     <div class="col mb-3">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <a href="{{ route('detail', ['id' => $product->id ]) }}">
+                            <a href="{{ route('detail', ['id' => $product->id]) }}">
                                 <img class="card-img-top " src="{{ asset($product->productImage[0]->images ?? '') }}"
                                     alt="..." />
                             </a>
@@ -215,8 +212,8 @@
                     </div>
                 </div>
             </div> --}}
-        </div>
-        <div class="container px-4 px-lg-5 mt-5">
-        </div>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+            </div>
     </section>
 @endsection
