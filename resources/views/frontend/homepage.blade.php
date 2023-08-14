@@ -58,9 +58,6 @@
     </header>
 
 
-
-
-
     <!-- section -->
     <section style="background-color: #f8f9fa;">
         <div class="section-content">
@@ -268,6 +265,44 @@
         </div>
     </section>
 
+    <section class="py-3">
+        <div class="container px-2 px-md-4 mt-3">
+            <div class="row justify-content-center">
+                <div class="col-md-8 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body pt-3">
+                            <p>
+                                Silakan isi biodata Anda untuk mengunduh katalog.
+                            </p>
+                            <form action="process_form.php" method="POST"> <!-- Replace with the actual form processing script -->
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body pt-3">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Download Katalog</h5>
+                                <p>Isi biodata Anda untuk mengunduh katalog.</p>
+                                <a class="btn btn-primary mt-2" href="assets/contoh.pdf" role="button">Download Katalog</a>
+                                <!-- Replace "download_link.php" with the actual download link -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section>
         <div class="section-content">
