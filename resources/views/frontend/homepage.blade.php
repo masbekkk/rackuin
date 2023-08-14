@@ -304,7 +304,7 @@
         </div>
     </section>
 
-    <section>
+    <section style="background-color: #f8f9fa;">
         <div class="section-content">
             <h2 class="section-title">Hubungi Kami</h2>
             <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success">
