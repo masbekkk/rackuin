@@ -43,6 +43,34 @@
                 method="POST">
                 @csrf
                 <div class="form-group">
+                    <label>Nama Perusahaan</label>
+                    <input id="company_name" type="text" name="company_name" class="form-control" value="{{ $data->company_name ?? "" }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="upload-image" class="font-weight-bold">Logo Sebelumnya</label>
+                    <div class="previous-logo-container">
+                        <img src={{ (isset($data->logo) ? asset($data->logo) : '')  }} class="img-fluid rounded" id="previous_logo" alt="previous logo"
+                            style="display:block;">
+                        <p class="text-muted" id="no-previous-text" style="display:none;">No previous logo
+                            available</p>
+                    </div>
+                    <label for="upload-logo" class="font-weight-bold">Upload logo</label>
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="upload-logo" accept="logo/*"
+                                name="logo" onchange="previewImageEdit(event, 'preview-logo-edit', 'no-preview-logo-text-edit')" >
+                            <label class="custom-file-label" for="upload-logo">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="preview-logo-container">
+                        <img src="#" class="img-fluid rounded" id="preview-logo-edit" alt="Preview logo"
+                            style="display:none;">
+                        <p class="text-muted" id="no-preview-logo-text-edit" style="display:block;">No preview available
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label>Tentang</label>
                     <textarea id="about_us" name="about_us" class="form-control froala" placeholder="Tentang">{{ $data->about_us ?? "" }}</textarea>
                 </div>
@@ -68,7 +96,7 @@
                     <div class="input-group mb-3">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="upload-image" accept="image/*"
-                                name="image_about_us" onchange="previewImageEdit(event)" >
+                                name="image_about_us" onchange="previewImageEdit(event, 'preview-image-edit', 'no-preview-text-edit')" >
                             <label class="custom-file-label" for="upload-image">Choose file</label>
                         </div>
                     </div>
@@ -79,6 +107,28 @@
                         <p class="text-muted" id="no-preview-text-edit" style="display:block;">No preview available
                         </p>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label>Link Instagram</label>
+                    <input id="link_ig" type="link" name="link_ig" class="form-control" value="{{ $data->link_ig ?? "" }}">
+                </div>
+                <div class="form-group">
+                    <label>Link Facebook</label>
+                    <input id="link_fb" type="link" name="link_fb" class="form-control" value="{{ $data->link_fb ?? "" }}">
+                </div>
+                <div class="form-group">
+                    <label>Link WhatsApp</label>
+                    <input id="link_wa" type="link" name="link_wa" class="form-control" value="{{ $data->link_wa ?? "" }}">
+                </div>
+
+                <div class="form-group">
+                    
+                    <div class="d-flex justify-content-between">
+                        <label for="upload-image" class="font-weight-bold">Upload Katalog</label>
+                        <a target="_blank" href="{{ asset($data->file_katalog ?? '' )}}">File Sebelumnya</a>
+                    </div>
+                   
+                    <input type="file" name="file_katalog" class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -105,9 +155,9 @@
         // new FroalaEditor('visi', {
         //     placeholderText: 'Visi'
         // });
-        function previewImageEdit(event) {
-            var preview = document.getElementById("preview-image-edit");
-            var noPreviewText = document.getElementById("no-preview-text-edit");
+        function previewImageEdit(event, idImage, idText) {
+            var preview = document.getElementById(idImage);
+            var noPreviewText = document.getElementById(idText);
             preview.src = URL.createObjectURL(event.target.files[0]);
             preview.style.display = "block";
             noPreviewText.style.display = "none";

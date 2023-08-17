@@ -17,6 +17,12 @@ return new class extends Migration
             $table->text('visi');
             $table->text('misi');
             $table->string('image');
+            $table->string('logo')->nullable();
+            $table->string('company_name');
+            $table->string('link_ig')->nullable();
+            $table->string('link_wa')->nullable();
+            $table->string('link_fb')->nullable();
+            $table->string('file_katalog')->nullable();
             $table->timestamps();
         });
     }

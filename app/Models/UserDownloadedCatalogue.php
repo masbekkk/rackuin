@@ -5,9 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DataApp extends Model
+class UserDownloadedCatalogue extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['id', 'about_us', 'visi', 'misi', 'image', 'company_name', 'logo'];
 }
