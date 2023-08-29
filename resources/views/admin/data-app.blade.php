@@ -4,9 +4,6 @@
 @endsection
 
 @section('style')
-    <!-- Include Froala Editor  style. -->
-    <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet"
-        type="text/css" />
 @endsection
 
 @section('content')
@@ -44,21 +41,22 @@
                 @csrf
                 <div class="form-group">
                     <label>Nama Perusahaan</label>
-                    <input id="company_name" type="text" name="company_name" class="form-control" value="{{ $data->company_name ?? "" }}" required>
+                    <input id="company_name" type="text" name="company_name" class="form-control"
+                        value="{{ $data->company_name ?? '' }}" required>
                 </div>
                 <div class="form-group">
                     <label for="upload-image" class="font-weight-bold">Logo Sebelumnya</label>
                     <div class="previous-logo-container">
-                        <img src={{ (isset($data->logo) ? asset($data->logo) : '')  }} class="img-fluid rounded" id="previous_logo" alt="previous logo"
-                            style="display:block;">
+                        <img src={{ isset($data->logo) ? asset($data->logo) : '' }} class="img-fluid rounded"
+                            id="previous_logo" alt="previous logo" style="display:block;">
                         <p class="text-muted" id="no-previous-text" style="display:none;">No previous logo
                             available</p>
                     </div>
                     <label for="upload-logo" class="font-weight-bold">Upload logo</label>
                     <div class="input-group mb-3">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="upload-logo" accept="logo/*"
-                                name="logo" onchange="previewImageEdit(event, 'preview-logo-edit', 'no-preview-logo-text-edit')" >
+                            <input type="file" class="custom-file-input" id="upload-logo" accept="logo/*" name="logo"
+                                onchange="previewImageEdit(event, 'preview-logo-edit', 'no-preview-logo-text-edit')">
                             <label class="custom-file-label" for="upload-logo">Choose file</label>
                         </div>
                     </div>
@@ -72,23 +70,23 @@
                 </div>
                 <div class="form-group">
                     <label>Tentang</label>
-                    <textarea id="about_us" name="about_us" class="form-control froala" placeholder="Tentang">{{ $data->about_us ?? "" }}</textarea>
+                    <textarea id="about_us" name="about_us" class="form-control froala" placeholder="Tentang">{{ $data->about_us ?? '' }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Visi</label>
-                    <textarea id="visi" name="visi" class="form-control froala">{{ $data->visi ?? "" }}</textarea>
+                    <textarea id="visi" name="visi" class="form-control froala">{{ $data->visi ?? '' }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Misi</label>
-                    <textarea id="misi" name="misi" class="form-control froala">{{ $data->misi ?? "" }}</textarea>
+                    <textarea id="misi" name="misi" class="form-control froala">{{ $data->misi ?? '' }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="upload-image" class="font-weight-bold">Gambar Sebelumnya</label>
                     <div class="previous-image-container">
-                        <img src={{ (isset($data->image) ? asset($data->image) : '')  }} class="img-fluid rounded" id="previous_image" alt="previous Image"
-                            style="display:block;">
+                        <img src={{ isset($data->image) ? asset($data->image) : '' }} class="img-fluid rounded"
+                            id="previous_image" alt="previous Image" style="display:block;">
                         <p class="text-muted" id="no-previous-text" style="display:none;">No previous image
                             available</p>
                     </div>
@@ -96,7 +94,8 @@
                     <div class="input-group mb-3">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="upload-image" accept="image/*"
-                                name="image_about_us" onchange="previewImageEdit(event, 'preview-image-edit', 'no-preview-text-edit')" >
+                                name="image_about_us"
+                                onchange="previewImageEdit(event, 'preview-image-edit', 'no-preview-text-edit')">
                             <label class="custom-file-label" for="upload-image">Choose file</label>
                         </div>
                     </div>
@@ -110,24 +109,27 @@
                 </div>
                 <div class="form-group">
                     <label>Link Instagram</label>
-                    <input id="link_ig" type="link" name="link_ig" class="form-control" value="{{ $data->link_ig ?? "" }}">
+                    <input id="link_ig" type="link" name="link_ig" class="form-control"
+                        value="{{ $data->link_ig ?? '' }}">
                 </div>
                 <div class="form-group">
                     <label>Link Facebook</label>
-                    <input id="link_fb" type="link" name="link_fb" class="form-control" value="{{ $data->link_fb ?? "" }}">
+                    <input id="link_fb" type="link" name="link_fb" class="form-control"
+                        value="{{ $data->link_fb ?? '' }}">
                 </div>
                 <div class="form-group">
                     <label>Link WhatsApp</label>
-                    <input id="link_wa" type="link" name="link_wa" class="form-control" value="{{ $data->link_wa ?? "" }}">
+                    <input id="link_wa" type="link" name="link_wa" class="form-control"
+                        value="{{ $data->link_wa ?? '' }}">
                 </div>
 
                 <div class="form-group">
-                    
+
                     <div class="d-flex justify-content-between">
                         <label for="upload-image" class="font-weight-bold">Upload Katalog</label>
-                        <a target="_blank" href="{{ asset($data->file_katalog ?? '' )}}">File Sebelumnya</a>
+                        <a target="_blank" href="{{ asset($data->file_katalog ?? '') }}">File Sebelumnya</a>
                     </div>
-                   
+
                     <input type="file" name="file_katalog" class="form-control">
                 </div>
 
@@ -143,15 +145,31 @@
 @endsection
 
 @section('script')
-    <!-- Include Froala Editor JS files. -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js">
-    </script>
+    <!-- Include TinyMCE Editor JS files. -->
+    <script src="https://cdn.tiny.cloud/1/6yx53q4nbmpkwhsmiby7h6prz6nysqkgg79kwn6bvakgkn5u/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
 
     <!-- Initialize the editor. -->
     <script>
-        new FroalaEditor('.froala', {
-            // placeholderText: 'Tentang'
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [{
+                    value: 'First.Name',
+                    title: 'First Name'
+                },
+                {
+                    value: 'Email',
+                    title: 'Email'
+                },
+            ],
+            ai_request: (request, respondWith) => respondWith.string(() => Promise.reject(
+                "See docs to implement AI Assistant"))
         });
+
         // new FroalaEditor('visi', {
         //     placeholderText: 'Visi'
         // });
