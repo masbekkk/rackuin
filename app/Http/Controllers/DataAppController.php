@@ -38,21 +38,21 @@ class DataAppController extends Controller
             $image_about_us = $request->file('image_about_us');
             if (!empty($image_about_us)) {
                 $image_about_usName = time() . '.' . $image_about_us->extension();
-                $image_about_us->move(public_path('assets/image_about_us'), $image_about_usName);
+                $image_about_us->move('assets/image_about_us', $image_about_usName);
                 $dataApp->image = 'assets/image_about_us/' . $image_about_usName;
             }
 
             $logo = $request->file('logo');
             if (!empty($logo)) {
                 $logoName = time() . '.' . $logo->extension();
-                $logo->move(public_path('assets/logo'), $logoName);
+                $logo->move('assets/logo', $logoName);
                 $dataApp->logo = 'assets/logo/' . $logoName;
             }
 
             $fileKatalog = $request->file('file_katalog');
             if (!empty($fileKatalog)) {
                 $fileKatalogName = time() . '.' . $fileKatalog->extension();
-                $fileKatalog->move(public_path('assets/fileKatalog'), $fileKatalogName);
+                $fileKatalog->move('assets/fileKatalog', $fileKatalogName);
                 $$dataApp->file_katalog = 'assets/fileKatalog/' . $fileKatalogName;
             }
 
@@ -70,21 +70,21 @@ class DataAppController extends Controller
             $image_about_us = $request->file('image_about_us');
             if (!empty($image_about_us)) {
                 $image_about_usName = time() . '.' . $image_about_us->extension();
-                $image_about_us->move(public_path('assets/image_about_us'), $image_about_usName);
+                $image_about_us->move('assets/image_about_us', $image_about_usName);
                 $dataApp->image = 'assets/image_about_us/' . $image_about_usName;
             }
 
             $logo = $request->file('logo');
             if (!empty($logo)) {
                 $logoName = time() . '.' . $logo->extension();
-                $logo->move(public_path('assets/logo'), $logoName);
+                $logo->move('assets/logo', $logoName);
                 $dataApp->logo = 'assets/logo/' . $logoName;
             }
 
             $fileKatalog = $request->file('file_katalog');
             if (!empty($fileKatalog)) {
                 $fileKatalogName = time() . '.' . $fileKatalog->extension();
-                $fileKatalog->move(public_path('assets/fileKatalog'), $fileKatalogName);
+                $fileKatalog->move('assets/fileKatalog', $fileKatalogName);
                 $dataApp->file_katalog = 'assets/fileKatalog/' . $fileKatalogName;
             }
 

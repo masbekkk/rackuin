@@ -37,7 +37,7 @@ class ProductImagesController extends Controller
         $product_image = $request->file('product_image');
         if (!empty($product_image)) {
             $product_imageName = time() . '.' . $product_image->extension();
-            $product_image->move(public_path('assets/product_image'), $product_imageName);
+            $product_image->move('assets/product_image', $product_imageName);
             $pi->images = 'assets/product_image/' . $product_imageName;
         }
         if($pi->save())
@@ -55,10 +55,10 @@ class ProductImagesController extends Controller
         $product_image = $request->file('product_image');
         if (!empty($product_image)) {
             $product_imageName = time() . '.' . $product_image->extension();
-            $product_image->move(public_path('assets/product_image'), $product_imageName);
+            $product_image->move('assets/product_image', $product_imageName);
             $oldProductImage = $pi->images;
-            if (File::exists(public_path($oldProductImage))) {
-                File::delete(public_path($oldProductImage));
+            if (File::exists($oldProductImage)) {
+                File::delete($oldProductImage);
             }
             $pi->images = 'assets/product_image/' . $product_imageName;
         }
@@ -72,8 +72,8 @@ class ProductImagesController extends Controller
     {
         $data = ProductImages::findOrFail($id);
 
-        if (File::exists(public_path($data->images))) {
-            File::delete(public_path($data->images));
+        if (File::exists($data->images)) {
+            File::delete($data->images);
         }
         $data->delete();
         return response()->json(['message' => 'Data Produk Image Berhasil Dihapus!'], 200);

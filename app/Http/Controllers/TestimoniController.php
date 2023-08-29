@@ -34,7 +34,7 @@ class TestimoniController extends Controller
         $bukti_testimoni = $request->file('bukti_testimoni');
         if (!empty($bukti_testimoni)) {
             $bukti_testimoniName = time() . '.' . $bukti_testimoni->extension();
-            $bukti_testimoni->move(public_path('assets/bukti_testimoni'), $bukti_testimoniName);
+            $bukti_testimoni->move('assets/bukti_testimoni', $bukti_testimoniName);
             $testimoni->image = 'assets/bukti_testimoni/' . $bukti_testimoniName;
         }
         if($testimoni->save())
@@ -52,10 +52,10 @@ class TestimoniController extends Controller
         $bukti_testimoni = $request->file('bukti_testimoni');
         if (!empty($bukti_testimoni)) {
             $bukti_testimoniName = time() . '.' . $bukti_testimoni->extension();
-            $bukti_testimoni->move(public_path('assets/bukti_testimoni'), $bukti_testimoniName);
+            $bukti_testimoni->move('assets/bukti_testimoni', $bukti_testimoniName);
             $oldTestimoniImage = $testimoni->image;
-            if (File::exists(public_path($oldTestimoniImage))) {
-                File::delete(public_path($oldTestimoniImage));
+            if (File::exists($oldTestimoniImage)) {
+                File::delete($oldTestimoniImage);
             }
             $testimoni->image = 'assets/bukti_testimoni/' . $bukti_testimoniName;
         }
@@ -69,8 +69,8 @@ class TestimoniController extends Controller
     {
         $data = Testimoni::findOrFail($id);
 
-        if (File::exists(public_path($data->image))) {
-            File::delete(public_path($data->image));
+        if (File::exists($data->image)) {
+            File::delete($data->image);
         }
         $data->delete();
         return response()->json(['message' => 'Data Testimoni Berhasil Dihapus!'], 200);
