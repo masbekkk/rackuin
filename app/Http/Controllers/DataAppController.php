@@ -53,7 +53,7 @@ class DataAppController extends Controller
             if (!empty($fileKatalog)) {
                 $fileKatalogName = time() . '.' . $fileKatalog->extension();
                 $fileKatalog->move('assets/fileKatalog', $fileKatalogName);
-                $$dataApp->file_katalog = 'assets/fileKatalog/' . $fileKatalogName;
+                $dataApp->file_katalog = 'assets/fileKatalog/' . $fileKatalogName;
             }
 
             $dataApp->link_ig = $request->link_ig;
@@ -98,7 +98,7 @@ class DataAppController extends Controller
         
         if ($dataApp->save())
             return redirect()->route('identitas-app.index')->with('success', 'Data Identitas Berhasil Ditambahkan!');
-        else return redirect()->route('identitas-app.index')->with('errors', $updated->getErrors());
+        else return redirect()->route('identitas-app.index')->with('errors', $dataApp->getErrors());
 
         // return response()->json(['message' => 'Data Identitas Web Berhasil Ditambahkan!'], 200);
     }

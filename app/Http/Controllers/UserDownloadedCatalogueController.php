@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class UserDownloadedCatalogueController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('download');
+    }
+
     public function index()
     {
         return view('admin.user-downloaded-catalog');
