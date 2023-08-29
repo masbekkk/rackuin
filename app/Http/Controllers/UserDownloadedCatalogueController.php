@@ -8,6 +8,17 @@ use Illuminate\Http\Request;
 
 class UserDownloadedCatalogueController extends Controller
 {
+    public function index()
+    {
+        return view('admin.user-downloaded-catalog');
+    }
+
+    public function showData()
+    {
+        $data = UserDownloadedCatalogue::all();
+        return response()->json(['data' => $data], 200);
+    }
+
     public function download(Request $request)
     {
 
@@ -26,6 +37,8 @@ class UserDownloadedCatalogueController extends Controller
             if($dataApp->file_katalog != null )
             return response()->download($dataApp->file_katalog);
             else return response()->download('assets/contoh.pdf');
+        }else {
+            return redirect()->route('homepage')->with('errors', $downloadCatalog->getErrors());
         }
         
     }

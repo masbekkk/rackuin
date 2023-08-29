@@ -138,9 +138,15 @@
                         <li class="{{ Route::is('testimoni.index') ? 'active' : '' }}"><a class="nav-link"
                                 href="{{ route('testimoni.index') }}"><i class="fas fa-database"></i><span>
                                     Testimoni</span></a></li>
+
                         <li class="menu-header">Data Identitas Web</li>
                         <li class="{{ Route::is('identitas-app.index') ? 'active' : '' }}"><a class="nav-link"
                                 href="{{ route('identitas-app.index') }}"><i class="fas fa-database"></i><span>
+                                    Data</span></a></li>
+
+                        <li class="menu-header">Data Downloader Katalog</li>
+                        <li class="{{ Route::is('show.download.catalog') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('show.download.catalog') }}"><i class="fas fa-database"></i><span>
                                     Data</span></a></li>
 
 
@@ -162,8 +168,7 @@
 
         <footer class="main-footer">
             <div class="footer-left">
-                Made With ♥ by <a href="https://www.instagram.com/berkahbekhan.inc/"><text>Mohammad Subkhan
-                        @berkahbekhan.inc</text></a>
+                Made With ♥ by <a href="https://www.instagram.com/berkahbekhan.inc/"><text>Rakuin</text></a>
             </div>
             <div class="footer-right">
                 <script>
