@@ -16,7 +16,7 @@ class DataAppController extends Controller
     public function showAboutUs()
     {
         $data = DataApp::first();
-        return view('frontend.tentang', ['data' => $data]);
+        return view('frontend.tentang', ['dataApp' => $data]);
     }
 
     public function index()

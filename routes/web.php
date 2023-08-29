@@ -63,4 +63,6 @@ Route::resource('testimoni', TestimoniController::class);
 
 Route::resource('identitas-app', DataAppController::class);
 
+Route::post('download-katalog', [\App\Http\Controllers\UserDownloadedCatalogueController::class, 'download'])->name('download.catalog');
+
 Auth::routes();

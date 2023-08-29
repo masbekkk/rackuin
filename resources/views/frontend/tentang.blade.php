@@ -42,9 +42,9 @@
         <div class="section-content">
             <div class="card">
                 <div style="display: flex;">
-                    <img src="{{ (isset($data->image) ? asset($data->image) : '') }}" alt="About Us Image" style="flex: 1;">
+                    <img src="{{ (isset($dataApp->image) ? asset($dataApp->image) : '') }}" alt="About Us Image" style="flex: 1;">
                     <div style="flex: 2; padding-left: 20px;">
-                        <p>{!! $data->about_us ?? '' !!}</p>
+                        <p>{!! $dataApp->about_us ?? '' !!}</p>
                     </div>
                 </div>
             </div>
@@ -55,11 +55,11 @@
         <div class="section-content">
             <div class="card">
                 <h3>Visi</h3>
-                <p>{!! $data->visi ?? '' !!}</p>
+                <p>{!! $dataApp->visi ?? '' !!}</p>
             </div>
             <div class="card">
                 <h3>Misi</h3>
-                {!! $data->misi ?? '' !!}
+                {!! $dataApp->misi ?? '' !!}
                 {{-- <ul>
         <li>Menghadirkan produk berkualitas tinggi kepada pelanggan kami.</li>
         <li>Memberikan pelayanan terbaik dan pengalaman yang unggul.</li>

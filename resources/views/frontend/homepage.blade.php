@@ -185,15 +185,15 @@
         <div class="section-content">
             <h2 class="section-title">Testimoni Pelanggan</h2>
             <div class="row justify-content-center">
-              @foreach ($testimonies as $testimoni)
-                <div class="col-md-3 mb-4">
-                    <div class="card testimonial-card">
-                        <img src="{{ asset($testimoni->image ?? "" )}}" class="card-img-top" alt="Foto Testimoni 1">
-                        <div class="card-body">
-                            <p class="card-text">{{$testimoni->name}}</p>
+                @foreach ($testimonies as $testimoni)
+                    <div class="col-md-3 mb-4">
+                        <div class="card testimonial-card">
+                            <img src="{{ asset($testimoni->image ?? '') }}" class="card-img-top" alt="Foto Testimoni 1">
+                            <div class="card-body">
+                                <p class="card-text">{{ $testimoni->name }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -264,43 +264,83 @@
             </div>
         </div>
     </section>
-
-    <section class="py-3">
-        <div class="container px-2 px-md-4 mt-3">
-            <div class="row justify-content-center">
-                <div class="col-md-8 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body pt-3">
-                            <p>
-                                Silakan isi biodata Anda untuk mengunduh katalog.
-                            </p>
-                            <form action="process_form.php" method="POST"> <!-- Replace with the actual form processing script -->
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Nama</label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                        </div>
+    <!-- Modal Add Data Warna -->
+    {{-- <div class="modal fade" id="downloadKatalogModal" tabindex="-1" aria-labelledby="downloadKatalogModalLabel"
+        aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        Silakan isi biodata Anda untuk mengunduh katalog.
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body pt-3">
-                            <div class="text-center">
-                                <h5 class="fw-bolder">Download Katalog</h5>
-                                <p>Isi biodata Anda untuk mengunduh katalog.</p>
-                                <a class="btn btn-primary mt-2" href="assets/contoh.pdf" role="button">Download Katalog</a>
-                                <!-- Replace "download_link.php" with the actual download link -->
-                            </div>
+                <div class="modal-body">
+                    <form action="process_form.php" method="POST">
+                        <!-- Replace with the actual form processing script -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <div class="modal" id="downloadKatalogModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Silakan isi biodata Anda untuk mengunduh katalog.</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('download.catalog')}}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Nomor Hp</label>
+                        <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            {{-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> --}}
+          </div>
+        </div>
+      </div>
+    <section class="py-3">
+        <div class="container px-2 px-md-4 mt-3">
+            
+            <div class="card">
+                <div class="card-body pt-3">
+                    <div class="text-center">
+                        <h5 class="fw-bolder">Download Katalog</h5>
+                        {{-- <p>Isi biodata Anda untuk mengunduh katalog.</p> --}}
+                        <a data-bs-toggle="modal" data-bs-target="#downloadKatalogModal" class="btn btn-primary mt-2"
+                           role="button">Download
+                            Katalog</a>
+                        <!-- Replace "download_link.php" with the actual download link -->
                     </div>
                 </div>
             </div>
+      
+        </div>
         </div>
     </section>
 

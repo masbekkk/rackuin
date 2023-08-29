@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categories;
+use App\Models\DataApp;
 use App\Models\Product;
 use App\Models\ProductCategories;
 use App\Models\ProductImages;
 use App\Models\Testimoni;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private $dataApp;
+    public function __construct()
+    {
+        $data = DataApp::first();
+        $this->dataApp = $data;
+
+    }
     public function index()
     {
         $images = ProductImages::all();
@@ -18,6 +25,7 @@ class HomeController extends Controller
         return view('frontend.homepage', [
             'images' => $images,
             'testimonies' => $testimonies,
+            'dataApp' => $this->dataApp,
         ]);
     }
 
@@ -34,6 +42,7 @@ class HomeController extends Controller
         return view('frontend.detail', [
             'product' => $product,
             'colors' => $colors,
+            'dataApp' => $this->dataApp,
 
         ]);
     }
@@ -49,6 +58,7 @@ class HomeController extends Controller
         return view('frontend.produk', [
             'products' => $products,
             'categories' => $categories,
+            'dataApp' => $this->dataApp,
         ]);
     }
 
@@ -66,6 +76,7 @@ class HomeController extends Controller
             'pc' => $pc,
             'categories' => $categories,
             'category_name' => $namaCategory->category,
+            'dataApp' => $this->dataApp,
         ]);
     }
 
