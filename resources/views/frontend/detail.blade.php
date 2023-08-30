@@ -36,7 +36,7 @@
                 <div class="col-lg-8 mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" id="main-image" src="{{ asset($product->productImage[0]->images) }}"
+                        <img class="card-img-top" id="main-image" src="{{ isset($product->productImage[0]->images) ? asset($product->productImage[0]->images) : '' }}"
                             alt="..." />
 
                         <!-- Product details-->
