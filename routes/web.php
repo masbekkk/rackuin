@@ -65,6 +65,7 @@ Route::resource('identitas-app', DataAppController::class);
 
 Route::post('download-katalog', [\App\Http\Controllers\UserDownloadedCatalogueController::class, 'download'])->name('download.catalog');
 Route::get('user-downloaded-katalog', [\App\Http\Controllers\UserDownloadedCatalogueController::class, 'index'])->name('show.download.catalog');
+Route::delete('user-downloaded-katalog/{id}', [\App\Http\Controllers\UserDownloadedCatalogueController::class, 'destroy'])->name('delete.download.catalog');
 Route::get('ajax/user-downloaded-katalog', [\App\Http\Controllers\UserDownloadedCatalogueController::class, 'showData'])->name('ajax.show.download.catalog');
 
 Auth::routes();

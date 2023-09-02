@@ -19,6 +19,7 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>No. Hp</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,12 +47,27 @@
                 {
                     data: 'phone_number'
                 },
+                {
+                    data: 'id'
+                },
             ];
             var arrayParams = {
                 idTable: '#table-1',
                 urlAjax: "{{ route('ajax.show.download.catalog') }}",
                 columns: dataColumns,
-               
+                defColumn: [{
+                    targets: [4],
+                    data: 'id',
+                    render: function(data, type, full, meta) {
+                        return `
+                              <a class="btn btn-danger btn-sm text-white w-50 ml-1"
+                                 href="#deleteData" data-delete-url="/user-downloaded-katalog/${data}" 
+                                 onclick="return deleteConfirm(this,'delete')"
+                                 title="Delete"><i class="fas fa-trash"></i></a>
+                          `
+                    },
+                }]
+
             }
             loadAjaxDataTables(arrayParams);
             table.on('xhr', function() {
@@ -61,5 +77,4 @@
 
         })
     </script>
-
 @endsection

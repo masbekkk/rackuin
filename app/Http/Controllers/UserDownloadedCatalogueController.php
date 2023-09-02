@@ -48,4 +48,10 @@ class UserDownloadedCatalogueController extends Controller
         
     }
 
+    public function destroy($id)
+    {
+        UserDownloadedCatalogue::findOrFail($id)->delete();
+        return response()->json(['message' => 'Data Berhasil Dihapus!'], 200);
+    }
+
 }
