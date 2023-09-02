@@ -24,6 +24,8 @@
         height: 30px;
         border-radius: 50%;
         /* background-color: #3498db; Change this to your desired color */
+        border: 2px solid #000;
+        /* border-color: #000; */
         display: flex;
         justify-content: center;
         align-items: center;

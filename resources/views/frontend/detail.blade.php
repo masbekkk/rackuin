@@ -100,7 +100,7 @@
                         <div class="card-footer border-top-0 bg-transparent">
                             <div class="text-center">
                                 <a class="btn d-flex align-items-center justify-content-center btn-primary mt-auto"
-                                    href="https://wa.me/6281999950241" style="column-gap: 0.4rem">Sewa Mobil <i
+                                    href="https://wa.me/6281999950241" style="column-gap: 0.4rem">Pesan Sekarang <i
                                         class="ri-whatsapp-line"></i></a>
                             </div>
                         </div>
