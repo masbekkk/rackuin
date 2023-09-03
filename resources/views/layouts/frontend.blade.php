@@ -8,7 +8,7 @@
     <meta name="author" content="jual rak" />
     <title>{{ isset($dataApp->company_name) ? $dataApp->company_name :  'Rackuin' }}</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{ (isset($dataApp->logo) ? asset($dataApp->logo) : asset('assets/rackuin.png')) }}"/>
+    <link rel="icon" type="image/x-icon" href="{{ (isset($dataApp->logo) ? asset($dataApp->logo) : asset('assets/rackuin.png')) }}" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
@@ -40,9 +40,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-fixed-top">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="/"><img src="{{ (isset($dataApp->logo) ? asset($dataApp->logo) : asset('assets/rackuin.png')) }}" class="navbar-img2"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -64,25 +62,33 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="produkDropdown">
                             <a class="dropdown-item" href="{{ route('kategori1') }}">Kategori 1</a>
-                            <a class="dropdown-item" href="{{ route('kategori2') }}">Kategori 2</a>
-                            <a class="dropdown-item" href="{{ route('kategori3') }}">Kategori 3</a>
-                        </div>
-                    </li> --}}
-                    <!-- Akhir Dropdown Kategori -->
-                    <li class="nav-item">
-                        <a href={{ isset($dataApp->link_ig) ? $dataApp->link_ig : "https://www.instagram.com" }}><img src="{{ asset('assets/instagram.png') }}"
-                                class="navbar-imglogo"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href={{ isset($dataApp->link_ig) ? $dataApp->link_ig : "https://id-id.facebook.com" }}><img src="{{ asset('assets/facebook.png') }}"
-                                class="navbar-imglogo"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href={{ isset($dataApp->link_ig) ? $dataApp->link_ig : "https://wa.me/6281999950241" }}><img src="{{ asset('assets/whatsapp.png') }}"
-                                class="navbar-imglogo"></a>
-                    </li>
-                </ul>
+                    <a class="dropdown-item" href="{{ route('kategori2') }}">Kategori 2</a>
+                    <a class="dropdown-item" href="{{ route('kategori3') }}">Kategori 3</a>
             </div>
+            </li> --}}
+            <!-- Akhir Dropdown Kategori -->
+            <li class="nav-item">
+                <a href={{ isset($dataApp->link_ig) ? $dataApp->link_ig : "https://www.instagram.com" }}><img src="{{ asset('assets/3.png') }}" class="navbar-imglogo"></a>
+            </li>
+            <li class="nav-item">
+                <a href={{ isset($dataApp->link_ig) ? $dataApp->link_ig : "https://wa.me/6281999950241" }}><img src="{{ asset('assets/4.png') }}" class="navbar-imglogo"></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="socialDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="{{ asset('assets/2.png') }}" alt="Social Media" class="navbar-imglogo">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="socialDropdown">
+                    <a class="dropdown-item" href="https://shopee.co.id/raku_idn">
+                        Shopee
+                    </a>
+                    <a class="dropdown-item" href="https://www.tokopedia.com">
+                        Tokopedia
+                    </a>
+                    <a class="dropdown-item" href="https://www.tiktok.com">
+                        Tiktok
+                    </a>
+                    </ul>
+                </div>
         </div>
     </nav>
 
