@@ -68,23 +68,23 @@
             </li> --}}
             <!-- Akhir Dropdown Kategori -->
             <li class="nav-item">
-                <a href={{ isset($dataApp->link_ig) ? $dataApp->link_ig : "https://www.instagram.com" }}><img src="{{ asset('assets/3.png') }}" class="navbar-imglogo"></a>
+                <a href={{ isset($dataApp->link_ig) ? $dataApp->link_ig : "https://www.instagram.com" }} target="_blank"><img src="{{ asset('assets/3.png') }}" class="navbar-imglogo"></a>
             </li>
             <li class="nav-item">
-                <a href={{ isset($dataApp->link_ig) ? $dataApp->link_ig : "https://wa.me/6281999950241" }}><img src="{{ asset('assets/4.png') }}" class="navbar-imglogo"></a>
+                <a href={{ isset($dataApp->link_wa) ? $dataApp->link_wa : "https://wa.me/6281999950241" }} target="_blank"><img src="{{ asset('assets/4.png') }}" class="navbar-imglogo"></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="socialDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="{{ asset('assets/2.png') }}" alt="Social Media" class="navbar-imglogo">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="socialDropdown">
-                    <a class="dropdown-item" href="https://shopee.co.id/raku_idn">
+                    <a class="dropdown-item" href="https://shopee.co.id/raku_idn" target="_blank">
                         Shopee
                     </a>
-                    <a class="dropdown-item" href="https://www.tokopedia.com">
+                    <a class="dropdown-item" href="https://www.tokopedia.com" target="_blank">
                         Tokopedia
                     </a>
-                    <a class="dropdown-item" href="https://www.tiktok.com">
+                    <a class="dropdown-item" href="https://www.tiktok.com" target="_blank">
                         Tiktok
                     </a>
                     </ul>
