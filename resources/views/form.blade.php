@@ -124,6 +124,9 @@
                         <li class="{{ Route::is('colors.index') ? 'active' : '' }}"><a class="nav-link"
                                 href="{{ route('colors.index') }}"><i class="fas fa-palette"></i> <span>
                                     Warna</span></a></li>
+                        <li class="{{ Route::is('size-product.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('size-product.index') }}"><i class="fas fa-sitemap"></i><span>
+                                    Ukuran Produk</span></a></li>
                         <li class="{{ Route::is('category.index') ? 'active' : '' }}"><a class="nav-link"
                                 href="{{ route('category.index') }}"><i class="fas fa-th-list"></i> <span>
                                     Kategori</span></a></li>

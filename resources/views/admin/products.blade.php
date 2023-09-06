@@ -31,11 +31,11 @@
                             <label>Deskripsi Produk</label>
                             <input type="text" name="description" class="form-control" required>
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>Harga Produk</label>
                             <input type="number" name="price" class="form-control" required>
-                        </div>
-                        <div class="form-group">
+                        </div> --}}
+                        {{-- <div class="form-group">
                             <label>Ukuran Produk</label>
                             <select class="js-example-basic-multiple" name="sizes[]" multiple="multiple">
                                 @foreach ($sizes as $size)
@@ -43,7 +43,7 @@
                                 @endforeach
 
                             </select>
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label>Warna Produk</label>
                             <select class="js-example-basic-multiple" name="colors[]" multiple="multiple">
@@ -88,11 +88,11 @@
                             <label>Deskripsi Produk</label>
                             <input type="text" id="description_edit" name="description" class="form-control" required>
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>Harga Produk</label>
                             <input type="number" id="price_edit" name="price" class="form-control" required>
-                        </div>
-                        <div class="form-group">
+                        </div> --}}
+                        {{-- <div class="form-group">
                             <label>Ukuran Produk</label>
                             <select class="js-example-basic-multiple" name="sizes[]" multiple="multiple" id="size_edit">
                                 @foreach ($sizes as $size)
@@ -101,7 +101,7 @@
 
                             </select>
 
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label>Warna Produk</label>
@@ -143,8 +143,8 @@
                             </th>
                             <th>Nama</th>
                             <th>Deskripsi</th>
-                            <th>Harga</th>
-                            <th>Ukuran</th>
+                            {{-- <th>Harga</th> --}}
+                            {{-- <th>Ukuran</th> --}}
                             <th>Warna</th>
                             <th>Aksi</th>
                         </tr>
@@ -176,12 +176,12 @@
                 {
                     data: 'description'
                 },
-                {
-                    data: 'price'
-                },
-                {
-                    data: 'sizes'
-                },
+                // {
+                //     data: 'price'
+                // },
+                // {
+                //     data: 'sizes'
+                // },
                 {
                     data: 'colors'
                 },
@@ -194,7 +194,7 @@
                 urlAjax: "{{ route('get.products') }}",
                 columns: dataColumns,
                 defColumn: [{
-                    targets: [6],
+                    targets: [4],
                     data: 'id',
                     render: function(data, type, full, meta) {
                         return `<div class="row w-100">
@@ -223,11 +223,11 @@
 
                 // var results = []; 
                 var idData = button.data('id');
-                console.log(button.data('sizes'))
-                var selectedSize = [button.data('sizes')];
-                var selectedSizes = selectedSize[0].split(',');
-                console.log(selectedSizes)
-                $('#size_edit').val(selectedSizes).trigger('change');
+                // console.log(button.data('sizes'))
+                // var selectedSize = [button.data('sizes')];
+                // var selectedSizes = selectedSize[0].split(',');
+                // console.log(selectedSizes)
+                // $('#size_edit').val(selectedSizes).trigger('change');
 
                 var selectedColor = [button.data('colors')];
                 var selectedColors = selectedColor[0].split(',');
@@ -236,7 +236,7 @@
 
                 $('#name_edit').val(button.data('name'))
                 $('#description_edit').val(button.data('description'))
-                $('#price_edit').val(button.data('price'))
+                // $('#price_edit').val(button.data('price'))
 
                 $('#form_edit_Produk').attr('action', 'products/' + idData)
 

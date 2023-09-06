@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImagesController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\SizesProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -67,5 +68,9 @@ Route::post('download-katalog', [\App\Http\Controllers\UserDownloadedCatalogueCo
 Route::get('user-downloaded-katalog', [\App\Http\Controllers\UserDownloadedCatalogueController::class, 'index'])->name('show.download.catalog');
 Route::delete('user-downloaded-katalog/{id}', [\App\Http\Controllers\UserDownloadedCatalogueController::class, 'destroy'])->name('delete.download.catalog');
 Route::get('ajax/user-downloaded-katalog', [\App\Http\Controllers\UserDownloadedCatalogueController::class, 'showData'])->name('ajax.show.download.catalog');
+
+
+Route::get('data-size-product', [SizesProductController::class, 'getSizesProduct'])->name('get.sp');
+Route::resource('size-product', SizesProductController::class);
 
 Auth::routes();

@@ -17,11 +17,11 @@ class ProductController extends Controller
 
     public function index()
     {
-        $size = Size::all();
+        // $size = Size::all();
         $color = Color::all();
 
         return view('admin.products', [
-            'sizes' => $size,
+            // 'sizes' => $size,
             'colors' => $color
         ]);
     }
@@ -39,8 +39,8 @@ class ProductController extends Controller
         // dd($request->description);
         $product->name = $request->name;
         $product->description = $request->description;
-        $product->price = $request->price;
-        $product->sizes = (is_array($request->sizes) ? implode(',', $request->sizes) : $request->sizes);
+        // $product->price = $request->price;
+        // $product->sizes = (is_array($request->sizes) ? implode(',', $request->sizes) : $request->sizes);
         $product->colors = (is_array($request->colors) ? implode(',', $request->colors) : $request->colors);
         $product->save();
 
@@ -54,8 +54,8 @@ class ProductController extends Controller
         // dd($request->description);
         $product->name = $request->name;
         $product->description = $request->description;
-        $product->price = $request->price;
-        $product->sizes = (is_array($request->sizes) ? implode(',', $request->sizes) : $request->sizes);
+        // $product->price = $request->price;
+        // $product->sizes = (is_array($request->sizes) ? implode(',', $request->sizes) : $request->sizes);
         $product->colors = (is_array($request->colors) ? implode(',', $request->colors) : $request->colors);
         $product->save();
 
