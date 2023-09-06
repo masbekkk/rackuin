@@ -99,8 +99,8 @@
                         <!-- Product actions-->
                         <div class="card-footer border-top-0 bg-transparent">
                             <div class="text-center">
-                                <a class="btn d-flex align-items-center justify-content-center btn-primary mt-auto"
-                                    href="https://wa.me/6281999950241" style="column-gap: 0.4rem">Pesan Sekarang <i
+                                <a id="btn_order" class="btn d-flex align-items-center justify-content-center btn-primary mt-auto"
+                                    href="https://wa.me/6281999950991" style="column-gap: 0.4rem">Pesan Sekarang <i
                                         class="ri-whatsapp-line"></i></a>
                             </div>
                         </div>
@@ -119,5 +119,12 @@
                 mainImage.src = thumbnail.src;
             });
         });
+
+        let linkWa = document.getElementById('link_wa');
+        let btnOrder = document.getElementById('btn_order');
+        console.log(linkWa.href)
+        btnOrder.href = linkWa.href;
+        console.log(btnOrder.href)
+
     </script>
 @endsection
