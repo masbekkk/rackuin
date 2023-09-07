@@ -39,6 +39,8 @@
 .nav-link {
   font-size: 1.2rem;
 }
-
+.accordion-body {
+  text-align: left;
+}
 
 

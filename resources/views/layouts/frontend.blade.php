@@ -81,10 +81,10 @@
                     <a class="dropdown-item" href="https://shopee.co.id/raku_idn" target="_blank">
                         Shopee
                     </a>
-                    <a class="dropdown-item" href="https://www.tokopedia.com" target="_blank">
+                    <a class="dropdown-item" href="https://www.tokopedia.com/rakuindonesia" target="_blank">
                         Tokopedia
                     </a>
-                    <a class="dropdown-item" href="https://www.tiktok.com" target="_blank">
+                    <a class="dropdown-item" href="https://www.tiktok.com/@raku_idn" target="_blank">
                         Tiktok
                     </a>
                     </ul>

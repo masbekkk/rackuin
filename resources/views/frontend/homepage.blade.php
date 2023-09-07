@@ -49,10 +49,10 @@
     <header class="bg-black py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-start text-white">
-                <h1 class="display-4 fw-bolder">Pabrik Rak Mini Market dan Rak Gudang</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Lorem ipsum, atau ringkasnya lipsum, adalah teks standar yang
-                    ditempatkan untuk mendemostrasikan elemen grafis atau presentasi visual seperti font, tipografi, dan
-                    tata letak</p>
+                <h1 class="display-4 fw-bolder">PABRIK RAK FASHION DAN RAK SUPER MARKET BERSKALA NASIONAL</h1>
+                <p class="lead fw-normal text-white-50 mb-0">RAKUIN adalah brand rak butik dan rak supermarket berskala nasional yang menjamin kualitas pada setiap produk yang di produksi demi kepercayaan dan kepuasan pelanggan. Rakuin memberikan solusi untuk berbagaimacam kebutuhan rak toko dan rak butik seperti gawang baju, rak sepatu, rak rokok dan masih banyak lagi.
+                Rakuin berkomitmen dan memiliki visi yaitu untuk selalu menjadi perusahaan yang mampu mendistribusikan rak supermarket dan fashion display berskala nasional dan dikenal sebagai produsen yang terpercaya,inovatif, kreatif dan berkualitas dengan harga terjangkau.
+                </p>
             </div>
         </div>
     </header>
@@ -96,14 +96,14 @@
 
     <section>
         <div class="section-content">
-            <h2 class="section-title">Mengapa Harus Beli di Rakindo</h2>
+            <h2 class="section-title">Mengapa Harus Beli di Rakuin</h2>
             <div class="row justify-content-center">
                 <div class="col-10 col-md-6 col-lg-4 mb-3">
                     <div class="card h-100">
                         <!-- Product title -->
                         <div class="card-body text-center">
-                            <h5 class="card-title">Judul Produk 1</h5>
-                            <p class="card-text">Deskripsi produk 1</p>
+                            <h5 class="card-title">KUALITAS TERJAMIN</h5>
+                            <p class="card-text">rakuin memastikan produk yang dibuat kokoh dan tahan lama, serta melakukan quality control yang ketat untuk kepuasan pelanggan.</p>
                         </div>
                         <!-- Remove Product actions-->
                     </div>
@@ -112,8 +112,8 @@
                     <div class="card h-100">
                         <!-- Product title -->
                         <div class="card-body text-center">
-                            <h5 class="card-title">Judul Produk 2</h5>
-                            <p class="card-text">Deskripsi produk 2</p>
+                            <h5 class="card-title">BERGARANSI</h5>
+                            <p class="card-text">rakuin memberikan garansi tukar barang hingga pengembalian dana apabila ada produk yang cacat produksi.</p>
                         </div>
                         <!-- Remove Product actions-->
                     </div>
@@ -122,8 +122,8 @@
                     <div class="card h-100">
                         <!-- Product title -->
                         <div class="card-body text-center">
-                            <h5 class="card-title">Judul Produk 3</h5>
-                            <p class="card-text">Deskripsi produk 3</p>
+                            <h5 class="card-title">PENGIRIMAN SELURUH INDONESIA</h5>
+                            <p class="card-text">pengiriman produk rakuin dapat menjangkau seluruh indonesia melalui ekspedisi pilihan.</p>
                         </div>
                         <!-- Remove Product actions-->
                     </div>
@@ -134,8 +134,8 @@
                     <div class="card h-100">
                         <!-- Product title -->
                         <div class="card-body text-center">
-                            <h5 class="card-title">Judul Produk 4</h5>
-                            <p class="card-text">Deskripsi produk 4</p>
+                            <h5 class="card-title">BISA CUSTOM</h5>
+                            <p class="card-text">rakuin menyediakan jasa custom produk sesuai dengan keinginan anda.</p>
                         </div>
                         <!-- Remove Product actions-->
                     </div>
@@ -144,18 +144,8 @@
                     <div class="card h-100">
                         <!-- Product title -->
                         <div class="card-body text-center">
-                            <h5 class="card-title">Judul Produk 5</h5>
-                            <p class="card-text">Deskripsi produk 5</p>
-                        </div>
-                        <!-- Remove Product actions-->
-                    </div>
-                </div>
-                <div class="col-10 col-md-6 col-lg-4 mb-3">
-                    <div class="card h-100">
-                        <!-- Product title -->
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Judul Produk 6</h5>
-                            <p class="card-text">Deskripsi produk 6</p>
+                            <h5 class="card-title">PROFESIONAL</h5>
+                            <p class="card-text">rakuin menyediakan pelayanan yang profesional untuk kepuasan pelanggan kami.</p>
                         </div>
                         <!-- Remove Product actions-->
                     </div>
@@ -208,13 +198,13 @@
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Pertanyaan 1
+                                apa saja produk yang dijual di rakuin?
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body fs-6">
-                                Jawaban untuk pertanyaan 1.
+                            rakuin menyediakan berbagaimacam kebutuhan rak display untuk rumah tangga, toko atau supermarket, dan butik.
                             </div>
                         </div>
                     </div>
@@ -222,13 +212,13 @@
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Pertanyaan 2
+                                bahan apa yang digunakan oleh rakuin?
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body fs-6">
-                                Jawaban untuk pertanyaan 2.
+                            kami menggunakan bahan besi hollow tebal dengan finishing powder coating yang tentunya membuat produk kami kokoh dan tahan lama.
                             </div>
                         </div>
                     </div>
@@ -236,13 +226,13 @@
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Pertanyaan 3
+                                apakah bisa custom rak baju?
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body fs-6">
-                                Jawaban untuk pertanyaan 3.
+                            rakuin menyediakan jasa custom produk sesuai dengan keinginan anda, silahkan konsultasi dan dapatkan design gratis dengan syarat yang berlaku.
                             </div>
                         </div>
                     </div>
@@ -250,13 +240,13 @@
                         <h2 class="accordion-header" id="headingFour">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Pertanyaan 4
+                                bisa dikirim kemana saja?
                             </button>
                         </h2>
                         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body fs-6">
-                                Jawaban untuk pertanyaan 4.
+                            rakuin dapat mengirimkan produk yang anda pesan ke seluruh indonesia dengan ekspedisi yang anda inginkan. khusus daerah surabaya, sidoarjo, dan gresik  dapatkan free ongkir dengan minimum pembelian 3juta
                             </div>
                         </div>
                     </div>
@@ -345,11 +335,22 @@
     </section>
 
     <section style="background-color: #f8f9fa;">
-        <div class="section-content">
-            <h2 class="section-title">Hubungi Kami</h2>
-            <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success">
-                <i class="fab fa-whatsapp me-2"></i>Hubungi melalui WhatsApp
-            </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Konten Hubungi Kami -->
+                <h2 class="section-title">Hubungi Kami</h2>
+                <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success">
+                    <i class="fab fa-whatsapp me-2"></i>Hubungi melalui WhatsApp
+                </a>
+            </div>
+            <div class="col-md-6">
+                <!-- Peta Google Maps (Lebih Kecil) -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.8857034638845!2d112.62081627478668!3d-7.253847292752759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fff0eef14051%3A0xb842d5ac022dee24!2sRAKUIN!5e0!3m2!1sid!2sid!4v1694065061691!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
 @endsection
