@@ -152,25 +152,6 @@
                 </div>
             </div>
     </section>
-
-
-
-
-    <section style="background-color: #f8f9fa;">
-        <div class="section-content">
-            <h2 class="section-title">Our Services</h2>
-            <div class="card">
-                <p>Service 1 description...</p>
-            </div>
-            <div class="card">
-                <p>Service 2 description...</p>
-            </div>
-            <div class="card">
-                <p>Service 3 description...</p>
-            </div>
-        </div>
-    </section>
-
     <section>
         <div class="section-content">
             <h2 class="section-title">Testimoni Pelanggan</h2>
@@ -338,19 +319,32 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <!-- Konten Hubungi Kami -->
-                <h2 class="section-title">Hubungi Kami</h2>
-                <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success">
-                    <i class="fab fa-whatsapp me-2"></i>Hubungi melalui WhatsApp
-                </a>
+                <div class="mb-4">
+                    <h2 class="section-title">Hubungi Kami</h2>
+                    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success">
+                        <i class="fab fa-whatsapp me-2"></i>Hubungi melalui WhatsApp
+                    </a>
+                </div>
+
+                <div>
+                    <h2 class="section-title">Program Reseller</h2>
+                    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success">
+                        <i class="fab fa-whatsapp me-2"></i>Daftar Sekarang
+                    </a>
+                </div>
             </div>
+
             <div class="col-md-6">
-                <!-- Peta Google Maps (Lebih Kecil) -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.8857034638845!2d112.62081627478668!3d-7.253847292752759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fff0eef14051%3A0xb842d5ac022dee24!2sRAKUIN!5e0!3m2!1sid!2sid!4v1694065061691!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="embed-responsive embed-responsive-4by3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.8857034638845!2d112.62081627478668!3d-7.253847292752759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fff0eef14051%3A0xb842d5ac022dee24!2sRAKUIN!5e0!3m2!1sid!2sid!4v1694065061691!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
 
 
 @endsection
