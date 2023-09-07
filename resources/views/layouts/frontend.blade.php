@@ -98,7 +98,7 @@
     <footer class="footer">
         <div class="container">
             <p class="m-0 text-center text-white">
-                Copyright &copy; {{ isset($dataApp->company_name) ? $dataApp->company_name :  "RACKUIN" }} 2023
+                Copyright &copy; {{ isset($dataApp->company_name) ? $dataApp->company_name :  "RAKUIN" }} 2023
             </p>
         </div>
     </footer>
