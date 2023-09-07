@@ -18,6 +18,11 @@ class Product extends Model
     {
         return $this->hasMany(ProductImages::class, 'product_id', 'id');
     }
+
+    public function productSize()
+    {
+        return $this->hasMany(SizesProduct::class, 'product_id', 'id');
+    }
     // public function size()
     // {
     //     return $this->hasMany(Size::class, 'product_id', 'id');
