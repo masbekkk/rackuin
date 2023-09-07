@@ -44,9 +44,20 @@
             height: 100%;
             object-fit: cover;
         }
+
+        /* CSS */
+        .header-with-background {
+            background-image: url('assets/bg3.png');
+            background-size: cover; /* Untuk menyesuaikan gambar dengan elemen */
+            background-repeat: no-repeat; /* Untuk menghindari pengulangan gambar */
+            color: white; /* Warna teks */
+            padding: 50px; /* Spasi dalam elemen */
+        }
+
     </style>
 
-    <header class="bg-black py-5">
+    <!-- HTML -->
+    <header class="bg-black py-5 header-with-background">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-start text-white">
                 <h1 class="display-4 fw-bolder">PABRIK RAK FASHION DAN RAK SUPER MARKET BERSKALA NASIONAL</h1>
@@ -56,6 +67,7 @@
             </div>
         </div>
     </header>
+
 
 
     <!-- section -->
