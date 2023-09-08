@@ -171,7 +171,7 @@
 
         <footer class="main-footer">
             <div class="footer-left">
-                Made With ♥ by <a href="https://www.instagram.com/berkahbekhan.inc/"><text>Rakuin</text></a>
+                Made With ♥ by Developer Rakuin
             </div>
             <div class="footer-right">
                 <script>

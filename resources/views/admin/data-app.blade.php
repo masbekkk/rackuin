@@ -56,7 +56,7 @@
                     <div class="input-group mb-3">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="upload-logo" accept="logo/*" name="logo"
-                                onchange="previewImageEdit(event, 'preview-logo-edit', 'no-preview-logo-text-edit')">
+                                onchange="previewImageEdit(event, 'preview-logo-edit', 'no-preview-logo-text-edit')" required>
                             <label class="custom-file-label" for="upload-logo">Choose file</label>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="upload-image" accept="image/*"
                                 name="image_about_us"
-                                onchange="previewImageEdit(event, 'preview-image-edit', 'no-preview-text-edit')">
+                                onchange="previewImageEdit(event, 'preview-image-edit', 'no-preview-text-edit')" required>
                             <label class="custom-file-label" for="upload-image">Choose file</label>
                         </div>
                     </div>

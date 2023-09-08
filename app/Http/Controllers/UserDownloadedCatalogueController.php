@@ -39,8 +39,8 @@ class UserDownloadedCatalogueController extends Controller
         $downloadCatalog->email = $request->email;
         $downloadCatalog->phone_number = $request->phone_number;
         if($downloadCatalog->save()) {
-            if($dataApp->file_katalog != null )
-            return response()->download($dataApp->file_katalog);
+            if(isset($dataApp->file_katalog))
+                return response()->download($dataApp->file_katalog);
             else return response()->download('assets/contoh.pdf');
         }else {
             return redirect()->route('homepage')->with('errors', $downloadCatalog->getErrors());

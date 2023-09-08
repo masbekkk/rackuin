@@ -73,4 +73,6 @@ Route::get('ajax/user-downloaded-katalog', [\App\Http\Controllers\UserDownloaded
 Route::get('data-size-product', [SizesProductController::class, 'getSizesProduct'])->name('get.sp');
 Route::resource('size-product', SizesProductController::class);
 
-Auth::routes();
+Auth::routes(
+    ['register' => false]
+);
