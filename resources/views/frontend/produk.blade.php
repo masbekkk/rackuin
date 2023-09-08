@@ -1,6 +1,26 @@
 @extends('layouts.frontend')
 
 @section('content')
+
+    <style>
+
+@media (max-width: 768px) {
+    .category-tabs {
+        flex-direction: column;
+    }
+    .category-tab {
+        margin-bottom: 10px;
+    }
+    .category-tab.active a {
+        font-size: 16px; /* Atur ukuran font untuk kategori aktif */
+    }
+    .category-tab a {
+        font-size: 14px; /* Atur ukuran font untuk kategori tidak aktif */
+    }
+}
+
+    </style>
+
     <header class="bg-black py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
