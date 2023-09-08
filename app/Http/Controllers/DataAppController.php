@@ -31,10 +31,21 @@ class DataAppController extends Controller
         // dd($dataApp);
         if (!empty($dataApp)) {
 
+            $request->validate([
+                'about_us' => 'required',
+                'visi' => 'required',
+                'misi' => 'required',
+                // 'image' => 'required',
+                'company_name' => 'required',
+            ]);
             $dataApp->about_us = $request->about_us;
             $dataApp->visi = $request->visi;
             $dataApp->misi = $request->misi;
             $dataApp->company_name = $request->company_name;
+
+            if (!empty($dataApp->image)) {
+                $dataApp->image = $dataApp->image;
+            }
             $image_about_us = $request->file('image_about_us');
             if (!empty($image_about_us)) {
                 $image_about_usName = time() . '.' . $image_about_us->extension();
@@ -60,6 +71,13 @@ class DataAppController extends Controller
             $dataApp->link_wa = $request->link_wa;
             $dataApp->link_fb = $request->link_fb;
         } else {
+            $request->validate([
+                'about_us' => 'required',
+                'visi' => 'required',
+                'misi' => 'required',
+                'image_about_us' => 'required',
+                'company_name' => 'required',
+            ]);
 
             $dataApp = new DataApp();
 
@@ -92,10 +110,10 @@ class DataAppController extends Controller
             $dataApp->link_wa = $request->link_wa;
             $dataApp->link_fb = $request->link_fb;
         }
-       
 
 
-        
+
+
         if ($dataApp->save())
             return redirect()->route('identitas-app.index')->with('success', 'Data Identitas Berhasil Ditambahkan!');
         else return redirect()->route('identitas-app.index')->with('errors', $dataApp->getErrors());

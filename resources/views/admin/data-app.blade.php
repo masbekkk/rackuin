@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <label>Nama Perusahaan</label>
                     <input id="company_name" type="text" name="company_name" class="form-control"
-                        value="{{ $data->company_name ?? '' }}" required>
+                        value="{{ $data->company_name ?? old('company_name') }}" required>
                 </div>
                 <div class="form-group">
                     <label for="upload-image" class="font-weight-bold">Logo Sebelumnya</label>
@@ -56,7 +56,7 @@
                     <div class="input-group mb-3">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="upload-logo" accept="logo/*" name="logo"
-                                onchange="previewImageEdit(event, 'preview-logo-edit', 'no-preview-logo-text-edit')" required>
+                                onchange="previewImageEdit(event, 'preview-logo-edit', 'no-preview-logo-text-edit')">
                             <label class="custom-file-label" for="upload-logo">Choose file</label>
                         </div>
                     </div>
@@ -70,17 +70,17 @@
                 </div>
                 <div class="form-group">
                     <label>Tentang</label>
-                    <textarea id="about_us" name="about_us" class="form-control froala" placeholder="Tentang">{{ $data->about_us ?? '' }}</textarea>
+                    <textarea id="about_us" name="about_us" class="form-control froala" >{{ $data->about_us ?? old('about_us') }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Visi</label>
-                    <textarea id="visi" name="visi" class="form-control froala">{{ $data->visi ?? '' }}</textarea>
+                    <textarea id="visi" name="visi" class="form-control froala" >{{ $data->visi ?? old('visi') }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Misi</label>
-                    <textarea id="misi" name="misi" class="form-control froala">{{ $data->misi ?? '' }}</textarea>
+                    <textarea id="misi" name="misi" class="form-control froala" >{{ $data->misi ?? old('misi') }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="upload-image" class="font-weight-bold">Gambar Sebelumnya</label>
@@ -95,7 +95,7 @@
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="upload-image" accept="image/*"
                                 name="image_about_us"
-                                onchange="previewImageEdit(event, 'preview-image-edit', 'no-preview-text-edit')" required>
+                                onchange="previewImageEdit(event, 'preview-image-edit', 'no-preview-text-edit')">
                             <label class="custom-file-label" for="upload-image">Choose file</label>
                         </div>
                     </div>
@@ -110,17 +110,17 @@
                 <div class="form-group">
                     <label>Link Instagram</label>
                     <input id="link_ig" type="link" name="link_ig" class="form-control"
-                        value="{{ $data->link_ig ?? '' }}">
+                        value="{{ $data->link_ig ?? old('link_ig') }}">
                 </div>
                 <div class="form-group">
                     <label>Link Facebook</label>
                     <input id="link_fb" type="link" name="link_fb" class="form-control"
-                        value="{{ $data->link_fb ?? '' }}">
+                        value="{{ $data->link_fb ?? old('link_fb') }}">
                 </div>
                 <div class="form-group">
                     <label>Link WhatsApp</label>
                     <input id="link_wa" type="link" name="link_wa" class="form-control"
-                        value="{{ $data->link_wa ?? '' }}">
+                        value="{{ $data->link_wa ?? old('link_wa') }}">
                 </div>
 
                 <div class="form-group">
