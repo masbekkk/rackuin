@@ -158,13 +158,11 @@
                     </form>
                 </div>
             </div>
-            <div class="mt-5 text-muted text-center">
+            {{-- <div class="mt-5 text-muted text-center">
                 Belum Punya Akun? <a href="{{ route('register') }}">Buat Akun</a>
-            </div>
+            </div> --}}
             <div class="simple-footer">
-                Made With ♥ by <a href="https://www.instagram.com/berkahbekhan.inc/"><text>Mohammad Subkhan
-                        @berkahbekhan.inc</text></a>
-              
+                Made With ♥ by Developer Rakuin
                 <script>
                     document.write(new Date().getFullYear())
                 </script>
