@@ -28,6 +28,9 @@
             max-width: 100%;
             height: auto;
         }
+        .card p {
+            text-align: left;
+        }
     </style>
 
     <header class="bg-black py-5">
@@ -39,17 +42,17 @@
     </header>
 
     <section>
-        <div class="section-content">
-            <div class="card">
-                <div style="display: flex;">
-                    <img src="{{ (isset($dataApp->image) ? asset($dataApp->image) : '') }}" alt="About Us Image" style="flex: 1;">
-                    <div style="flex: 2; padding-left: 20px;">
-                        <p>{!! $dataApp->about_us ?? '' !!}</p>
-                    </div>
+    <div class="section-content">
+        <div class="card">
+            <div style="display: flex;">
+                <img src="{{ (isset($dataApp->image) ? asset($dataApp->image) : '') }}" alt="About Us Image" style="max-width: 300px; flex: 1;">
+                <div style="flex: 2; padding-left: 20px;">
+                    <p>{!! $dataApp->about_us ?? '' !!}</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section>
         <div class="section-content">
