@@ -340,7 +340,7 @@
 
                 <div>
                     <h2 class="section-title">Program Reseller</h2>
-                    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success">
+                    <a href="https://forms.gle/9ctPqU6vy9UtuSL77" target="_blank" class="btn btn-success">
                         <i class="fab fa-whatsapp me-2"></i>Daftar Sekarang
                     </a>
                 </div>
