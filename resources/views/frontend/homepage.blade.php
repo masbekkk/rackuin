@@ -333,7 +333,7 @@
             <div class="col-md-6">
                 <div class="mb-4">
                     <h2 class="section-title">Hubungi Kami</h2>
-                    <a href="{{ isset($dataApp->link_wa) ? $dataApp->link_wa : "https://wa.me/6281999950241" }}" target="_blank" class="btn btn-success">
+                    <a href="https://api.whatsapp.com/send?phone=62818522299&text=Hai%20Kak,%20saya%20mau%20tanya-tanya%20mengenai%20produk%20rakuin%20%F0%9F%98%8A" target="_blank" class="btn btn-success">
                         <i class="fab fa-whatsapp me-2"></i>Hubungi melalui WhatsApp
                     </a>
                 </div>
