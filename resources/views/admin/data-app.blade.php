@@ -4,6 +4,7 @@
 @endsection
 
 @section('style')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -145,34 +146,15 @@
 @endsection
 
 @section('script')
-    <!-- Include TinyMCE Editor JS files. -->
-    <script src="https://cdn.tiny.cloud/1/6yx53q4nbmpkwhsmiby7h6prz6nysqkgg79kwn6bvakgkn5u/tinymce/6/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    <!-- Include summernote Editor JS files. -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
     <!-- Initialize the editor. -->
     <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            mergetags_list: [{
-                    value: 'First.Name',
-                    title: 'First Name'
-                },
-                {
-                    value: 'Email',
-                    title: 'Email'
-                },
-            ],
-            ai_request: (request, respondWith) => respondWith.string(() => Promise.reject(
-                "See docs to implement AI Assistant"))
-        });
-
-        // new FroalaEditor('visi', {
-        //     placeholderText: 'Visi'
-        // });
+        $(document).ready( function() {
+            $('.froala').summernote();
+        })
+       
         function previewImageEdit(event, idImage, idText) {
             var preview = document.getElementById(idImage);
             var noPreviewText = document.getElementById(idText);
