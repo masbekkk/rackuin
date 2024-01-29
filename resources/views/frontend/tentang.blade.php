@@ -28,28 +28,32 @@
             max-width: 100%;
             height: auto;
         }
+        .card p {
+            text-align: left;
+        }
     </style>
 
     <header class="bg-black py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">About Us</h1>
+                <h1 class="display-4 fw-bolder">Tentang</h1>
             </div>
         </div>
     </header>
 
     <section>
-        <div class="section-content">
-            <div class="card">
-                <div style="display: flex;">
-                    <img src="{{ (isset($dataApp->image) ? asset($dataApp->image) : '') }}" alt="About Us Image" style="flex: 1;">
-                    <div style="flex: 2; padding-left: 20px;">
-                        <p>{!! $dataApp->about_us ?? '' !!}</p>
-                    </div>
+    <div class="section-content">
+        <div class="card">
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <img src="{{ (isset($dataApp->image) ? asset($dataApp->image) : '') }}" alt="About Us Image" style="max-width: 100%; flex-basis: 300px;">
+                <div style="flex: 1; padding: 20px;">
+                    <p style="max-width: 100%; overflow-wrap: break-word;">{!! $dataApp->about_us ?? '' !!}</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section>
         <div class="section-content">

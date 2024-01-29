@@ -22,7 +22,7 @@
         }
     </style>
 
-    <header class="bg-dark py-5">
+    <header class="bg-black py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Detail {{ $product->name }}</h1>
@@ -109,7 +109,7 @@
                             <div class="text-center">
                                 <a id="btn_order"
                                     class="btn d-flex align-items-center justify-content-center btn-primary mt-auto"
-                                    href="https://wa.me/6281999950991" style="column-gap: 0.4rem">Order Now <i
+                                    href="https://api.whatsapp.com/send?phone=62818522299&text=Hai%20Kak,%20saya%20mau%20tanya-tanya%20mengenai%20produk%20rakuin%20%F0%9F%98%8A" style="column-gap: 0.4rem">Beli Sekarang <i
                                         class="ri-whatsapp-line"></i></a>
                             </div>
                         </div>
